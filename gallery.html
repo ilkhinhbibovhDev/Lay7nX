@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' cdn.jsdelivr.net; font-src 'self' cdn.jsdelivr.net; img-src 'self' data: https:"
+    />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      name="permissions-policy"
+      content="geolocation=(), microphone=(), camera=()"
+    />
+    <title>Qaleriya - Lay7nX</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <nav class="navbar-main">
+      <div class="container-fluid">
+        <div class="nav-brand">
+          <i class="bi bi-lightning-charge-fill"></i>
+          <span>Lay7nX</span>
+        </div>
+        <div class="nav-menu">
+          <a href="index.html" class="nav-link">Ana Səhifə</a>
+          <a href="about.html" class="nav-link">Haqqımda</a>
+          <a href="portofilo.html" class="nav-link">Portfolio</a>
+          <a href="services.html" class="nav-link">Xidmətlər</a>
+          <a href="team.html" class="nav-link">Komanda</a>
+          <a href="contact.html" class="nav-link">Əlaqə</a>
+          <a href="gallery.html" class="nav-link active">Qaleriya</a>
+          <a href="blog.html" class="nav-link">Blog</a>
+        </div>
+        <div class="nav-controls">
+          <button class="theme-btn" id="themeToggle">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          <button class="menu-btn" id="mobileMenuBtn">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <section class="page-header">
+      <div class="header-content">
+        <h1>Qaleriya</h1>
+        <p>Layihələrimizdən görüntülər</p>
+      </div>
+    </section>
+
+    <section class="gallery-section">
+      <div class="container">
+        <div class="gallery-filters">
+          <button class="filter-btn active" data-filter="*">Hamısı</button>
+          <button class="filter-btn" data-filter=".web">Veb Dizayn</button>
+          <button class="filter-btn" data-filter=".mobile">Mobil</button>
+          <button class="filter-btn" data-filter=".ui">UI/UX</button>
+          <button class="filter-btn" data-filter=".branding">Branding</button>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item web">
+            <div
+              class="image-placeholder"
+              style="
+                background: linear-gradient(135deg, #ff6b9d, #e84c89);
+                height: 250px;
+              "
+            ></div>
+            <div class="gallery-overlay">
+              <h3>E-Commerce Platforması</h3>
+              <p>Veb Dizayn</p>
+              <a href="#" class="view-btn">Məraciəti Gör</a>
+            </div>
+          </div>
+
+          <div class="gallery-item ui">
+            <div
+              class="image-placeholder"
+              style="
+                background: linear-gradient(135deg, #00d4ff, #0099e0);
+                height: 250px;
+              "
+            ></div>
+            <div class="gallery-overlay">
+              <h3>Dashboard Interface</h3>
+              <p>UI/UX Dizayn</p>
+              <a href="#" class="view-btn">Məraciəti Gör</a>
+            </div>
+          </div>
+
+          <div class="gallery-item mobile">
+            <div
+              class="image-placeholder"
+              style="
+                background: linear-gradient(135deg, #7c3aed, #5b21b6);
+                height: 250px;
+              "
+            ></div>
+            <div class="gallery-overlay">
+              <h3>Mobil Tətbiq</h3>
+              <p>Mobil Dizayn</p>
+              <a href="#" class="view-btn">Məraciəti Gör</a>
+            </div>
+          </div>
+
+          <div class="gallery-item branding">
+            <div
+              class="image-placeholder"
+              style="
+                background: linear-gradient(135deg, #ffa500, #ff8c00);
+                height: 250px;
+              "
+            ></div>
+            <div class="gallery-overlay">
+              <h3>Brand Identity</h3>
+              <p>Branding</p>
+              <a href="#" class="view-btn">Məraciəti Gör</a>
+            </div>
+          </div>
+
+          <div class="gallery-item web">
+            <div
+              class="image-placeholder"
+              style="
+                background: linear-gradient(135deg, #00c896, #00a876);
+                height: 250px;
+              "
+            ></div>
+            <div class="gallery-overlay">
+              <h3>CMS Sistemi</h3>
+              <p>Veb Dizayn</p>
+              <a href="#" class="view-btn">Məraciəti Gör</a>
+            </div>
+          </div>
+
+          <div class="gallery-item ui">
+            <div
+              class="image-placeholder"
+              style="
+                background: linear-gradient(135deg, #e91e63, #c2185b);
+                height: 250px;
+              "
+            ></div>
+            <div class="gallery-overlay">
+              <h3>Social Network UI</h3>
+              <p>UI/UX Dizayn</p>
+              <a href="#" class="view-btn">Məraciəti Gör</a>
+            </div>
+          </div>
+
+          <div class="gallery-item mobile">
+            <div
+              class="image-placeholder"
+              style="
+                background: linear-gradient(135deg, #ff1493, #ff69b4);
+                height: 250px;
+              "
+            ></div>
+            <div class="gallery-overlay">
+              <h3>Fitness App</h3>
+              <p>Mobil Dizayn</p>
+              <a href="#" class="view-btn">Məraciəti Gör</a>
+            </div>
+          </div>
+
+          <div class="gallery-item branding">
+            <div
+              class="image-placeholder"
+              style="
+                background: linear-gradient(135deg, #1f51ff, #0a2be8);
+                height: 250px;
+              "
+            ></div>
+            <div class="gallery-overlay">
+              <h3>Logo Məcmuəsi</h3>
+              <p>Branding</p>
+              <a href="#" class="view-btn">Məraciəti Gör</a>
+            </div>
+          </div>
+
+          <div class="gallery-item web">
+            <div
+              class="image-placeholder"
+              style="
+                background: linear-gradient(135deg, #ffd700, #ffa500);
+                height: 250px;
+              "
+            ></div>
+            <div class="gallery-overlay">
+              <h3>Corporate Veb Saytı</h3>
+              <p>Veb Dizayn</p>
+              <a href="#" class="view-btn">Məraciəti Gör</a>
+            </div>
+          </div>
+
+          <div class="gallery-item ui">
+            <div
+              class="image-placeholder"
+              style="
+                background: linear-gradient(135deg, #ff00ff, #ff1493);
+                height: 250px;
+              "
+            ></div>
+            <div class="gallery-overlay">
+              <h3>App Uxast</h3>
+              <p>UI/UX Dizayn</p>
+              <a href="#" class="view-btn">Məraciəti Gör</a>
+            </div>
+          </div>
+
+          <div class="gallery-item mobile">
+            <div
+              class="image-placeholder"
+              style="
+                background: linear-gradient(135deg, #00fa9a, #00b86d);
+                height: 250px;
+              "
+            ></div>
+            <div class="gallery-overlay">
+              <h3>E-Learning App</h3>
+              <p>Mobil Dizayn</p>
+              <a href="#" class="view-btn">Məraciəti Gör</a>
+            </div>
+          </div>
+
+          <div class="gallery-item branding">
+            <div
+              class="image-placeholder"
+              style="
+                background: linear-gradient(135deg, #8b008b, #ff1493);
+                height: 250px;
+              "
+            ></div>
+            <div class="gallery-overlay">
+              <h3>Paket Dizayn</h3>
+              <p>Branding</p>
+              <a href="#" class="view-btn">Məraciəti Gör</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Lay7nX</h4>
+          <p>Rəqəmsal gələcəyi birlikdə yaradaq</p>
+        </div>
+        <div class="footer-section">
+          <h4>Linkləri</h4>
+          <ul>
+            <li><a href="index.html">Ana Səhifə</a></li>
+            <li><a href="portofilo.html">Portfolio</a></li>
+            <li><a href="services.html">Xidmətlər</a></li>
+            <li><a href="contact.html">Əlaqə</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Sosial</h4>
+          <div class="social-links">
+            <a href="#"><i class="bi bi-github"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Lay7nX. Bütün hüquqları qayıtsız.</p>
+      </div>
+    </footer>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="mobile-link">Ana Səhifə</a>
+      <a href="about.html" class="mobile-link">Haqqımda</a>
+      <a href="portofilo.html" class="mobile-link">Portfolio</a>
+      <a href="services.html" class="mobile-link">Xidmətlər</a>
+      <a href="team.html" class="mobile-link">Komanda</a>
+      <a href="contact.html" class="mobile-link">Əlaqə</a>
+      <a href="gallery.html" class="mobile-link">Qaleriya</a>
+      <a href="blog.html" class="mobile-link">Blog</a>
+    </div>
+
+    <script src="js/security.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/portfolio.js"></script>
+  </body>
+</html>

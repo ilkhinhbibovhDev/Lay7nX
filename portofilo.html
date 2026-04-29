@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' cdn.jsdelivr.net; font-src 'self' cdn.jsdelivr.net; img-src 'self' data: https:"
+    />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      name="permissions-policy"
+      content="geolocation=(), microphone=(), camera=()"
+    />
+    <title>Portfolio - Lay7nX</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar-main">
+      <div class="container-fluid">
+        <div class="nav-brand">
+          <i class="bi bi-lightning-charge-fill"></i>
+          <span>Lay7nX</span>
+        </div>
+        <div class="nav-menu">
+          <a href="index.html" class="nav-link">Ana Səhifə</a>
+          <a href="about.html" class="nav-link">Haqqımda</a>
+          <a href="portofilo.html" class="nav-link active">Portfolio</a>
+          <a href="services.html" class="nav-link">Xidmətlər</a>
+          <a href="team.html" class="nav-link">Komanda</a>
+          <a href="contact.html" class="nav-link">Əlaqə</a>
+          <a href="gallery.html" class="nav-link">Qaleriya</a>
+          <a href="blog.html" class="nav-link">Blog</a>
+        </div>
+        <div class="nav-controls">
+          <button class="theme-btn" id="themeToggle">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          <button class="menu-btn" id="mobileMenuBtn">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="header-content">
+        <h1>Bizim İşlərimiz</h1>
+        <p>Əvvəlcə tamamladığımız layihələr</p>
+      </div>
+    </section>
+
+    <!-- Portfolio Filter -->
+    <section class="portfolio-filter-section">
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">Hamısı</button>
+        <button class="filter-btn" data-filter="web">Web Dizayn</button>
+        <button class="filter-btn" data-filter="mobile">Mobil</button>
+        <button class="filter-btn" data-filter="ai">AI / ML</button>
+        <button class="filter-btn" data-filter="other">Digər</button>
+      </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="portfolio-section">
+      <div class="portfolio-grid">
+        <!-- Project 1 -->
+        <div class="portfolio-card" data-category="web">
+          <div class="portfolio-image">
+            <div
+              class="image-placeholder"
+              style="background: linear-gradient(135deg, #00d4ff, #7c3aed)"
+            ></div>
+            <div class="portfolio-overlay">
+              <a href="#" class="view-btn"><i class="bi bi-link"></i> Bax</a>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <h3>E-Commerce Platform</h3>
+            <div class="tech-tags">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>MongoDB</span>
+            </div>
+            <p>Modern alış-veriş platforması</p>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="portfolio-card" data-category="mobile">
+          <div class="portfolio-image">
+            <div
+              class="image-placeholder"
+              style="background: linear-gradient(135deg, #ff006e, #ffd60a)"
+            ></div>
+            <div class="portfolio-overlay">
+              <a href="#" class="view-btn"><i class="bi bi-link"></i> Bax</a>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <h3>Fitness Tracker</h3>
+            <div class="tech-tags">
+              <span>React Native</span>
+              <span>Firebase</span>
+            </div>
+            <p>Sağlıq izləmə mobil tətbiqı</p>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="portfolio-card" data-category="web">
+          <div class="portfolio-image">
+            <div
+              class="image-placeholder"
+              style="background: linear-gradient(135deg, #7c3aed, #ff006e)"
+            ></div>
+            <div class="portfolio-overlay">
+              <a href="#" class="view-btn"><i class="bi bi-link"></i> Bax</a>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <h3>Analytics Dashboard</h3>
+            <div class="tech-tags">
+              <span>Vue.js</span>
+              <span>D3.js</span>
+            </div>
+            <p>Real-time analitika paneli</p>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="portfolio-card" data-category="ai">
+          <div class="portfolio-image">
+            <div
+              class="image-placeholder"
+              style="background: linear-gradient(135deg, #ffd60a, #00d4ff)"
+            ></div>
+            <div class="portfolio-overlay">
+              <a href="#" class="view-btn"><i class="bi bi-link"></i> Bax</a>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <h3>AI Chatbot</h3>
+            <div class="tech-tags">
+              <span>Python</span>
+              <span>NLP</span>
+            </div>
+            <p>Sual-cavab sistemi</p>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="portfolio-card" data-category="web">
+          <div class="portfolio-image">
+            <div
+              class="image-placeholder"
+              style="background: linear-gradient(135deg, #4caf50, #2196f3)"
+            ></div>
+            <div class="portfolio-overlay">
+              <a href="#" class="view-btn"><i class="bi bi-link"></i> Bax</a>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <h3>Microservices Arxitekturası</h3>
+            <div class="tech-tags">
+              <span>Docker</span>
+              <span>Kubernetes</span>
+            </div>
+            <p>Skalabilir backend sistemi</p>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="portfolio-card" data-category="other">
+          <div class="portfolio-image">
+            <div
+              class="image-placeholder"
+              style="background: linear-gradient(135deg, #f44336, #9c27b0)"
+            ></div>
+            <div class="portfolio-overlay">
+              <a href="#" class="view-btn"><i class="bi bi-link"></i> Bax</a>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <h3>3D Vizualizasiya</h3>
+            <div class="tech-tags">
+              <span>Three.js</span>
+              <span>WebGL</span>
+            </div>
+            <p>İnteraktiv 3D sənə</p>
+          </div>
+        </div>
+
+        <!-- Project 7 -->
+        <div class="portfolio-card" data-category="mobile">
+          <div class="portfolio-image">
+            <div
+              class="image-placeholder"
+              style="background: linear-gradient(135deg, #00bcd4, #009688)"
+            ></div>
+            <div class="portfolio-overlay">
+              <a href="#" class="view-btn"><i class="bi bi-link"></i> Bax</a>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <h3>Social Media App</h3>
+            <div class="tech-tags">
+              <span>Flutter</span>
+              <span>Firebase</span>
+            </div>
+            <p>Sosial şəbəkə tətbiqı</p>
+          </div>
+        </div>
+
+        <!-- Project 8 -->
+        <div class="portfolio-card" data-category="ai">
+          <div class="portfolio-image">
+            <div
+              class="image-placeholder"
+              style="background: linear-gradient(135deg, #ff5722, #ffc107)"
+            ></div>
+            <div class="portfolio-overlay">
+              <a href="#" class="view-btn"><i class="bi bi-link"></i> Bax</a>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <h3>Computer Vision Sistem</h3>
+            <div class="tech-tags">
+              <span>TensorFlow</span>
+              <span>OpenCV</span>
+            </div>
+            <p>Şəkil tanıma sistemi</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <h2>Sizin Layihəniz Sonrakı Olsun</h2>
+      <p>Dəhşətli nəticələr üçün bizi seçin</p>
+      <a href="contact.html" class="btn btn-large">
+        <i class="bi bi-envelope"></i> Əlaqə Saxla
+      </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Lay7nX</h4>
+          <p>Rəqəmsal gələcəyi birlikdə yaradaq</p>
+        </div>
+        <div class="footer-section">
+          <h4>Linkləri</h4>
+          <ul>
+            <li><a href="index.html">Ana Səhifə</a></li>
+            <li><a href="portofilo.html">Portfolio</a></li>
+            <li><a href="services.html">Xidmətlər</a></li>
+            <li><a href="contact.html">Əlaqə</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Sosial</h4>
+          <div class="social-links">
+            <a href="#"><i class="bi bi-github"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Lay7nX. Bütün hüquqları qayıtsız.</p>
+      </div>
+    </footer>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="mobile-link">Ana Səhifə</a>
+      <a href="about.html" class="mobile-link">Haqqımda</a>
+      <a href="portofilo.html" class="mobile-link">Portfolio</a>
+      <a href="services.html" class="mobile-link">Xidmətlər</a>
+      <a href="team.html" class="mobile-link">Komanda</a>
+      <a href="contact.html" class="mobile-link">Əlaqə</a>
+      <a href="gallery.html" class="mobile-link">Qaleriya</a>
+      <a href="blog.html" class="mobile-link">Blog</a>
+    </div>
+
+    <script src="js/security.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/portfolio.js"></script>
+  </body>
+</html>

@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' cdn.jsdelivr.net; font-src 'self' cdn.jsdelivr.net; img-src 'self' data: https:"
+    />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      name="permissions-policy"
+      content="geolocation=(), microphone=(), camera=()"
+    />
+    <title>Əlaqə - Lay7nX</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar-main">
+      <div class="container-fluid">
+        <div class="nav-brand">
+          <i class="bi bi-lightning-charge-fill"></i>
+          <span>Lay7nX</span>
+        </div>
+        <div class="nav-menu">
+          <a href="index.html" class="nav-link">Ana Səhifə</a>
+          <a href="about.html" class="nav-link">Haqqımda</a>
+          <a href="portofilo.html" class="nav-link">Portfolio</a>
+          <a href="services.html" class="nav-link">Xidmətlər</a>
+          <a href="team.html" class="nav-link">Komanda</a>
+          <a href="contact.html" class="nav-link active">Əlaqə</a>
+          <a href="gallery.html" class="nav-link">Qaleriya</a>
+          <a href="blog.html" class="nav-link">Blog</a>
+        </div>
+        <div class="nav-controls">
+          <button class="theme-btn" id="themeToggle">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          <button class="menu-btn" id="mobileMenuBtn">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="header-content">
+        <h1>Biz Əlaqə Saxlayaq</h1>
+        <p>Soruşlarınız, tələbləriniz və ya təkliflər üçün bizə yazın</p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <div class="contact-container">
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <h2>Birbaşa Əlaqə</h2>
+
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="bi bi-geo-alt-fill"></i>
+            </div>
+            <div class="info-content">
+              <h4>Ünvan</h4>
+              <p>Bakı, Azərbaycan</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="bi bi-envelope-fill"></i>
+            </div>
+            <div class="info-content">
+              <h4>Email</h4>
+              <p>
+                <a href="mailto:info@lay7nx.com">ilkhinhbibovh@gmail.com </a>
+              </p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="bi bi-telephone-fill"></i>
+            </div>
+            <div class="info-content">
+              <h4>Telefon</h4>
+              <p><a href="tel:+994501234567">+994 55 318 61 70</a></p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="bi bi-clock-fill"></i>
+            </div>
+            <div class="info-content">
+              <h4>İş Saatları</h4>
+              <p>Hefte ici 1-5: 09:00 - 18:00</p>
+              <p>Şənbə - Bazar: Qapalı</p>
+            </div>
+          </div>
+
+          <div class="social-section">
+            <h4>Sosial Şəbəkələr</h4>
+            <div class="social-links">
+              <a href="#"><i class="bi bi-github"></i> GitHub</a>
+              <a href="#"><i class="bi bi-linkedin"></i> LinkedIn</a>
+              <a href="#"><i class="bi bi-twitter"></i> Twitter</a>
+              <a href="#"><i class="bi bi-instagram"></i> Instagram</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-wrapper">
+          <h2>Mesaj Göndərin</h2>
+          <form id="contactForm" class="contact-form">
+            <div class="form-group">
+              <label for="fullName">Ad Soyad *</label>
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                placeholder="Adınızı və soyadınızı daxil edin"
+                required
+              />
+              <span class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Ünvanı *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="sizin@email.com"
+                required
+              />
+              <span class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Telefon</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+994 55 318 61 70"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Mövzu *</label>
+              <select id="subject" name="subject" required>
+                <option value="">Mövzu seçin</option>
+                <option value="web-development">Web Dizayn & Geliştirme</option>
+                <option value="mobile-app">Mobil Tətbiq</option>
+                <option value="consultation">Konsultasiya</option>
+                <option value="other">Digər</option>
+              </select>
+              <span class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Mesaj *</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                placeholder="Mesajınızı buraya yazın..."
+                required
+              ></textarea>
+              <span class="error-message"></span>
+            </div>
+
+            <div class="form-group checkbox-group">
+              <label>
+                <input type="checkbox" name="terms" required />
+                <span>Məxfilik siyasətini qəbul etdiyimi bildirim</span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-large">
+              <i class="bi bi-send-fill"></i> Göndər
+            </button>
+          </form>
+
+          <div
+            id="successMessage"
+            class="success-message"
+            style="display: none"
+          >
+            <i class="bi bi-check-circle"></i>
+            <p>
+              Mesajınız uğurla göndərildi! Çox tezliklə sizə geri dönüş
+              verəcəyik.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <h2>Tez-tez Soruşulan Suallar</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-question">
+            <h4>Yanıtınız neçə vaxt olar?</h4>
+            <i class="bi bi-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Adətən 24 saat ərzində cavab veririk. Dərin məsələlər üçün 48 saat
+              ola bilər.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <h4>Layihə dəyəri nə qədərdir?</h4>
+            <i class="bi bi-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Hər layihə fərqlidir. Birinci konsultasiyada layihənin
+              tərəftərlərgərə görə fərqli qiymət verilir.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <h4>Hansı ödəniş metodlarını qəbul edirsiniz?</h4>
+            <i class="bi bi-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Bank köçürmə, kredit kartası və kriptovalyuta qəbul edirik.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <h4>Layihə bitdikdən sonra dəstək var mı?</h4>
+            <i class="bi bi-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Əlbətdə! Əbədi texniki dəstək və yeniləmələr sağlayırıq.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Lay7nX</h4>
+          <p>Rəqəmsal gələcəyi birlikdə yaradaq</p>
+        </div>
+        <div class="footer-section">
+          <h4>Linkləri</h4>
+          <ul>
+            <li><a href="index.html">Ana Səhifə</a></li>
+            <li><a href="portofilo.html">Portfolio</a></li>
+            <li><a href="services.html">Xidmətlər</a></li>
+            <li><a href="contact.html">Əlaqə</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Sosial</h4>
+          <div class="social-links">
+            <a href="#"><i class="bi bi-github"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Lay7nX. Bütün hüquqları qayıtsız.</p>
+      </div>
+    </footer>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="mobile-link">Ana Səhifə</a>
+      <a href="about.html" class="mobile-link">Haqqımda</a>
+      <a href="portofilo.html" class="mobile-link">Portfolio</a>
+      <a href="services.html" class="mobile-link">Xidmətlər</a>
+      <a href="team.html" class="mobile-link">Komanda</a>
+      <a href="contact.html" class="mobile-link">Əlaqə</a>
+      <a href="gallery.html" class="mobile-link">Qaleriya</a>
+      <a href="blog.html" class="mobile-link">Blog</a>
+    </div>
+
+    <script src="js/security.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+  </body>
+</html>

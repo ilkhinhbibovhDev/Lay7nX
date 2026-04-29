@@ -1,0 +1,61 @@
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Helvetica,
+    Arial;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #003486, #700000);
+  margin: 0;
+}
+.container {
+  background:linear-gradient(135deg, #750080ee, #003385);
+  padding: 28px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(12, 24, 48, 0.06);
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+}
+h1 {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+.description {
+  color: #fff4f4;
+  margin-bottom: 16px;
+}
+#inputText {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 16px;
+}
+#checkButton {
+  margin-top: 12px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #7ab7ff, #bcd8ff);
+  color: #042a4a;
+  font-weight: 700;
+  cursor: pointer;
+}
+#checkButton:active {
+  transform: translateY(1px);
+}
+#result {
+  margin-top: 14px;
+  font-weight: 600;
+}
+.example {
+  margin-top: 10px;
+  color: #6b7280;
+  font-size: 14px;
+}
