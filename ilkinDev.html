@@ -1,0 +1,4619 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Lay7nX — Hər addımınız bizimlə</title>
+    <meta name="description" content="Hər addımınız bizimlə" />
+    <meta property="og:title" content="Lay7nX" />
+    <meta property="og:description" content="Hər addımınız bizimlə" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inconsolata:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      :root {
+        --p: #dc2626;
+        --p2: #b91c1c;
+        --p3: #ef4444;
+        --acc: #f59e0b;
+        --bg: #0f0202;
+        --bg2: #1a0303;
+        --surf: rgba(255, 255, 255, 0.04);
+        --txt: #fef2f2;
+        --muted: #fca5a5;
+        --muted2: #ef4444;
+        --brd: rgba(255, 255, 255, 0.08);
+        --brd2: rgba(255, 255, 255, 0.14);
+        --fn-d: "Sora", sans-serif;
+        --fn-b: "DM Sans", sans-serif;
+        --fn-m: "JetBrains Mono", monospace;
+        --r: 10px;
+        --sh: 0 20px 60px rgba(0, 0, 0, 0.55);
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: var(--fn-b);
+        background: var(--bg);
+        color: var(--txt);
+        overflow-x: hidden;
+        line-height: 1.6;
+      }
+      ::-webkit-scrollbar {
+        width: 4px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--bg);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--p);
+        border-radius: 99px;
+      }
+      body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 9999;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+        opacity: 0.4;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        background-image:
+          linear-gradient(#dc262605 1px, transparent 1px),
+          linear-gradient(90deg, #dc262605 1px, transparent 1px);
+        background-size: 64px 64px;
+        opacity: 0.6;
+      }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 5px 14px;
+        border-radius: 99px;
+        border: 1px solid #dc262630;
+        background: #dc262608;
+        font-size: 11px;
+        font-weight: 700;
+        color: #dc2626;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+        font-family: "Inconsolata", monospace;
+      }
+      .wrap {
+        max-width: 1160px;
+        margin: 0 auto;
+      }
+      .orb {
+        border-radius: 50%;
+        filter: blur(90px);
+        pointer-events: none;
+      }
+      .rv {
+        opacity: 0;
+        transform: translateY(22px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+      .rv.vis {
+        opacity: 1;
+        transform: none;
+      }
+      .rv.d1 {
+        transition-delay: 0.06s;
+      }
+      .rv.d2 {
+        transition-delay: 0.14s;
+      }
+      .rv.d3 {
+        transition-delay: 0.22s;
+      }
+      .rv.d4 {
+        transition-delay: 0.3s;
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(22px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.3;
+          transform: scale(0.6);
+        }
+      }
+      @keyframes scrollLine {
+        0% {
+          opacity: 0;
+          transform: scaleY(0);
+          transform-origin: top;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+          transform: scaleY(1);
+          transform-origin: top;
+        }
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      /* Dark Mode Styles */
+      html[data-theme="dark"] {
+        --bg: #1a1a1a;
+        --bg2: #242424;
+        --txt: #f0f0f0;
+        --muted: #a0a0a0;
+      }
+      @media (prefers-color-scheme: dark) {
+        html:not([data-theme="light"]) {
+          --bg: #1a1a1a;
+          --bg2: #242424;
+          --txt: #f0f0f0;
+          --muted: #a0a0a0;
+        }
+      }
+        [style*="grid-template-columns:1fr 1fr"] {
+          grid-template-columns: 1fr !important;
+        }
+        [style*="grid-template-columns:2fr 1fr 1fr 1fr"] {
+          grid-template-columns: 1fr 1fr !important;
+        }
+        [style*="grid-template-columns:repeat(4"] {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
+        [style*="grid-template-columns:repeat(3"] {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
+        [style*="padding:96px 48px"] {
+          padding: 64px 24px !important;
+        }
+        [style*="padding:80px 48px"] {
+          padding: 56px 24px !important;
+        }
+        [style*="padding:64px 48px"] {
+          padding: 48px 24px !important;
+        }
+        nav {
+          padding: 12px 20px !important;
+        }
+        #nav-links {
+          display: none !important;
+        }
+        #nav-toggle {
+          display: flex !important;
+        }
+      }
+      @media (max-width: 600px) {
+        [style*="padding:64px 24px"] {
+          padding: 44px 18px !important;
+        }
+        [style*="gap:80px"] {
+          gap: 40px !important;
+        }
+        [style*="padding:40px"] {
+          padding: 24px !important;
+        }
+        [style*="grid-template-columns:repeat(2,1fr)"] {
+          grid-template-columns: 1fr !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      id="main-nav"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 500;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 48px;
+        background: rgba(2, 6, 23, 0.85);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border-bottom: 1px solid rgba(192, 57, 43, 0.35);
+        transition: all 0.3s;
+      "
+    >
+      <a
+        href="#"
+        style="
+          font-family: &quot;Sora&quot;, sans-serif;
+          font-size: 20px;
+          font-weight: 800;
+          text-decoration: none;
+          color: var(--txt);
+        "
+      >
+        <span style="color: #dc2626">Lay7nX</span>
+      </a>
+      <ul id="nav-links" style="display: flex; gap: 28px; list-style: none">
+        <li>
+          <a
+            href="#services"
+            style="
+              color: var(--muted);
+              text-decoration: none;
+              font-size: 14px;
+              font-weight: 500;
+              transition: color 0.2s;
+            "
+            onmouseover="this.style.color = 'var(--txt)'"
+            onmouseout="this.style.color = 'var(--muted)'"
+            >Hizmetler</a
+          >
+        </li>
+        <li>
+          <a
+            href="#about"
+            style="
+              color: var(--muted);
+              text-decoration: none;
+              font-size: 14px;
+              font-weight: 500;
+              transition: color 0.2s;
+            "
+            onmouseover="this.style.color = 'var(--txt)'"
+            onmouseout="this.style.color = 'var(--muted)'"
+            >Hakkımızda</a
+          >
+        </li>
+        <li>
+          <a
+            href="#portfolio"
+            style="
+              color: var(--muted);
+              text-decoration: none;
+              font-size: 14px;
+              font-weight: 500;
+              transition: color 0.2s;
+            "
+            onmouseover="this.style.color = 'var(--txt)'"
+            onmouseout="this.style.color = 'var(--muted)'"
+            >Portfolyo</a
+          >
+        </li>
+        <li>
+          <a
+            href="#blog"
+            style="
+              color: var(--muted);
+              text-decoration: none;
+              font-size: 14px;
+              font-weight: 500;
+              transition: color 0.2s;
+            "
+            onmouseover="this.style.color = 'var(--txt)'"
+            onmouseout="this.style.color = 'var(--muted)'"
+            >Blog</a
+          >
+        </li>
+        <li>
+          <a
+            href="#contact"
+            style="
+              color: var(--muted);
+              text-decoration: none;
+              font-size: 14px;
+              font-weight: 500;
+              transition: color 0.2s;
+            "
+            onmouseover="this.style.color = 'var(--txt)'"
+            onmouseout="this.style.color = 'var(--muted)'"
+            >İletişim</a
+          >
+        </li>
+      </ul>
+      <div style="display: flex; align-items: center; gap: 12px">
+        <button
+          id="dm-btn"
+          onclick="toggleDark()"
+          style="
+            background: none;
+            border: 1px solid rgba(192, 57, 43, 0.4);
+            cursor: pointer;
+            font-size: 18px;
+            color: var(--muted);
+            padding: 7px 10px;
+            border-radius: 8px;
+            transition: all 0.2s;
+          "
+          title="Tema Değiştir"
+        >
+          🌙
+        </button>
+        <a
+          href="#contact"
+          style="
+            padding: 9px 20px;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: #fff;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 4px 16px #dc262640;
+          "
+          onmouseover="
+            this.style.transform = 'translateY(-2px)';
+            this.style.boxShadow = '0 8px 28px #DC262655';
+          "
+          onmouseout="
+            this.style.transform = '';
+            this.style.boxShadow = '0 4px 16px #DC262640';
+          "
+          >Başla →</a
+        >
+        <button
+          onclick="toggleNav()"
+          style="
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+          "
+          id="nav-toggle"
+        >
+          <span
+            style="
+              width: 22px;
+              height: 2px;
+              background: var(--txt);
+              border-radius: 2px;
+              display: block;
+              transition: all 0.3s;
+            "
+          ></span>
+          <span
+            style="
+              width: 22px;
+              height: 2px;
+              background: var(--txt);
+              border-radius: 2px;
+              display: block;
+              transition: all 0.3s;
+            "
+          ></span>
+          <span
+            style="
+              width: 22px;
+              height: 2px;
+              background: var(--txt);
+              border-radius: 2px;
+              display: block;
+              transition: all 0.3s;
+            "
+          ></span>
+        </button>
+      </div>
+    </nav>
+
+    <section
+      id="hero"
+      style="
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 120px 24px 80px;
+        overflow: hidden;
+        z-index: 1;
+      "
+    >
+      <div
+        class="orb"
+        style="
+          width: 700px;
+          height: 700px;
+          top: -250px;
+          left: -150px;
+          background: radial-gradient(circle, #dc262618, transparent 70%);
+          pointer-events: none;
+          position: absolute;
+          border-radius: 50%;
+          filter: blur(90px);
+        "
+      ></div>
+      <div
+        class="orb"
+        style="
+          width: 500px;
+          height: 500px;
+          bottom: -150px;
+          right: -150px;
+          background: radial-gradient(circle, #b91c1c14, transparent 70%);
+          pointer-events: none;
+          position: absolute;
+          border-radius: 50%;
+          filter: blur(90px);
+        "
+      ></div>
+      <div
+        class="orb"
+        style="
+          width: 350px;
+          height: 350px;
+          top: 40%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: radial-gradient(circle, #f59e0b10, transparent 70%);
+          pointer-events: none;
+          position: absolute;
+          border-radius: 50%;
+          filter: blur(80px);
+        "
+      ></div>
+      <div
+        style="position: relative; z-index: 1; max-width: 880px; margin: 0 auto"
+      >
+        <div
+          style="
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 18px;
+            border-radius: 99px;
+            border: 1px solid #f59e0b35;
+            background: #f59e0b08;
+            font-size: 11px;
+            font-weight: 600;
+            color: #f59e0b;
+            letter-spacing: 1.5px;
+            margin-bottom: 30px;
+            font-family: &quot;Inconsolata&quot;, monospace;
+            animation: fadeUp 0.8s ease both;
+          "
+        >
+          <span
+            style="
+              width: 7px;
+              height: 7px;
+              border-radius: 50%;
+              background: #f59e0b;
+              animation: pulse 2s infinite;
+              display: inline-block;
+            "
+          ></span>
+          Diğer
+        </div>
+        <h1
+          style="
+            font-family: &quot;Sora&quot;, sans-serif;
+            font-size: clamp(64px, 11vw, 130px);
+            font-weight: 900;
+            line-height: 0.88;
+            letter-spacing: -4px;
+            color: var(--txt);
+            margin-bottom: 26px;
+            animation: fadeUp 0.9s ease 0.1s both;
+          "
+        >
+          ALIŞVERIŞIN EN<br />
+          <span
+            style="
+              background: linear-gradient(135deg, #dc2626, #ef4444, #f59e0b);
+              -webkit-background-clip: text;
+              background-clip: text;
+              color: transparent;
+            "
+            >İYI ADRESI</span
+          >
+        </h1>
+        <p
+          style="
+            font-family: &quot;Sora&quot;, sans-serif;
+            font-size: clamp(16px, 2.5vw, 22px);
+            color: #b91c1c;
+            margin-bottom: 18px;
+            animation: fadeUp 0.9s ease 0.15s both;
+          "
+        >
+          Hər addımınız bizimlə
+        </p>
+        <p
+          style="
+            font-size: 18px;
+            color: var(--muted);
+            max-width: 580px;
+            margin: 0 auto 48px;
+            line-height: 1.85;
+            animation: fadeUp 0.9s ease 0.2s both;
+          "
+        >
+          Hər addımınız bizimlə
+        </p>
+        <div
+          style="
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeUp 0.9s ease 0.3s both;
+          "
+        >
+          <a
+            href="#services"
+            style="
+              display: inline-flex;
+              align-items: center;
+              gap: 9px;
+              padding: 15px 34px;
+              border-radius: 10px;
+              background: linear-gradient(135deg, #dc2626, #b91c1c);
+              color: #fff;
+              font-weight: 700;
+              font-size: 16px;
+              text-decoration: none;
+              box-shadow: 0 10px 36px #dc262645;
+              transition: all 0.25s;
+              letter-spacing: 0.2px;
+            "
+            onmouseover="
+              this.style.transform = 'translateY(-3px)';
+              this.style.boxShadow = '0 18px 50px #DC262660';
+            "
+            onmouseout="
+              this.style.transform = '';
+              this.style.boxShadow = '0 10px 36px #DC262645';
+            "
+            >Hizmetlerimizi Keşfet →</a
+          >
+          <a
+            href="#contact"
+            style="
+              display: inline-flex;
+              align-items: center;
+              gap: 9px;
+              padding: 15px 34px;
+              border-radius: 10px;
+              background: transparent;
+              color: var(--txt);
+              font-weight: 700;
+              font-size: 16px;
+              text-decoration: none;
+              border: 1px solid rgba(192, 57, 43, 0.45);
+              transition: all 0.25s;
+            "
+            onmouseover="
+              this.style.borderColor = '#DC2626';
+              this.style.color = '#DC2626';
+              this.style.transform = 'translateY(-2px)';
+            "
+            onmouseout="
+              this.style.borderColor = 'rgba(192,57,43,.45)';
+              this.style.color = 'var(--txt)';
+              this.style.transform = '';
+            "
+            >Bize Ulaşın</a
+          >
+        </div>
+        <p
+          style="
+            margin-top: 30px;
+            font-size: 13px;
+            color: var(--muted);
+            font-family: &quot;Inconsolata&quot;, monospace;
+            animation: fadeUp 0.9s ease 0.4s both;
+          "
+        >
+          📧 Ilkhinhbibovh@gmail.com
+        </p>
+        <div
+          style="
+            position: absolute;
+            bottom: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            font-family: &quot;Inconsolata&quot;, monospace;
+            font-size: 10px;
+            color: var(--muted2);
+            letter-spacing: 1px;
+            opacity: 0.6;
+          "
+        >
+          <div
+            style="
+              width: 1px;
+              height: 40px;
+              background: linear-gradient(#dc2626, transparent);
+              animation: scrollLine 2s infinite;
+            "
+          ></div>
+          KAYDIRIN
+        </div>
+      </div>
+    </section>
+    <div
+      style="
+        height: 1px;
+        background: rgba(192, 57, 43, 0.28);
+        position: relative;
+        z-index: 1;
+      "
+    ></div>
+
+    <section
+      id="services"
+      style="
+        position: relative;
+        z-index: 1;
+        padding: 96px 48px;
+        background: rgba(15, 23, 42, 0.45);
+        backdrop-filter: blur(10px);
+      "
+    >
+      <div class="wrap">
+        <div style="text-align: center; margin-bottom: 56px">
+          <div class="pill rv">HİZMETLERİMİZ</div>
+          <h2
+            class="rv d1"
+            style="
+              font-family: &quot;Sora&quot;, sans-serif;
+              font-size: clamp(32px, 5vw, 58px);
+              font-weight: 800;
+              line-height: 1.02;
+              color: var(--txt);
+              margin-bottom: 16px;
+            "
+          >
+            NE
+            <span
+              style="
+                background: linear-gradient(135deg, #dc2626, #b91c1c);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+              "
+              >YAPIYORUZ</span
+            >
+          </h2>
+          <p
+            class="rv d2"
+            style="
+              font-size: 16px;
+              color: var(--muted);
+              max-width: 520px;
+              margin: 0 auto;
+              line-height: 1.8;
+            "
+          >
+            Alanında uzman ekibimizle kapsamlı hizmetler sunuyoruz.
+          </p>
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+          "
+        >
+          <div
+            class="rv d1"
+            style="
+              background: linear-gradient(
+                160deg,
+                rgba(60, 8, 8, 0.5) 0%,
+                rgba(15, 23, 42, 0.65) 100%
+              );
+              backdrop-filter: blur(15px);
+              border: 1px solid rgba(192, 57, 43, 0.3);
+              border-radius: 20px;
+              padding: 32px;
+              transition: all 0.35s;
+              position: relative;
+              overflow: hidden;
+            "
+            onmouseover="
+              this.style.borderColor = 'rgba(229,57,53,.55)';
+              this.style.transform = 'translateY(-6px)';
+              this.style.boxShadow = '0 24px 60px rgba(0,0,0,.5)';
+              this.querySelector('.svc-line').style.opacity = '1';
+            "
+            onmouseout="
+              this.style.borderColor = 'rgba(192,57,43,.3)';
+              this.style.transform = '';
+              this.style.boxShadow = '';
+              this.querySelector('.svc-line').style.opacity = '0';
+            "
+          >
+            <div
+              class="svc-line"
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background: linear-gradient(
+                  90deg,
+                  #dc2626,
+                  #b91c1c,
+                  transparent
+                );
+                opacity: 0;
+                transition: opacity 0.3s;
+              "
+            ></div>
+            <div
+              style="
+                width: 54px;
+                height: 54px;
+                border-radius: 16px;
+                background: rgba(192, 57, 43, 0.15);
+                border: 1px solid rgba(192, 57, 43, 0.3);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 26px;
+                margin-bottom: 20px;
+              "
+            >
+              🎯
+            </div>
+            <h3
+              style="
+                font-family: &quot;Sora&quot;, sans-serif;
+                font-size: 19px;
+                font-weight: 700;
+                color: var(--txt);
+                margin-bottom: 10px;
+              "
+            >
+              Danışmanlık Hizmetleri
+            </h3>
+            <p style="font-size: 14px; color: var(--muted); line-height: 1.75">
+              Alanında uzman ekibimizle sektöre özel danışmanlık sunuyoruz.
+            </p>
+            <div
+              style="
+                margin-top: 18px;
+                font-size: 13px;
+                font-weight: 700;
+                color: #dc2626;
+                display: inline-flex;
+                align-items: center;
+                gap: 5px;
+              "
+            >
+              Daha Fazla →
+            </div>
+          </div>
+          <div
+            class="rv d2"
+            style="
+              background: linear-gradient(
+                160deg,
+                rgba(60, 8, 8, 0.5) 0%,
+                rgba(15, 23, 42, 0.65) 100%
+              );
+              backdrop-filter: blur(15px);
+              border: 1px solid rgba(192, 57, 43, 0.3);
+              border-radius: 20px;
+              padding: 32px;
+              transition: all 0.35s;
+              position: relative;
+              overflow: hidden;
+            "
+            onmouseover="
+              this.style.borderColor = 'rgba(229,57,53,.55)';
+              this.style.transform = 'translateY(-6px)';
+              this.style.boxShadow = '0 24px 60px rgba(0,0,0,.5)';
+              this.querySelector('.svc-line').style.opacity = '1';
+            "
+            onmouseout="
+              this.style.borderColor = 'rgba(192,57,43,.3)';
+              this.style.transform = '';
+              this.style.boxShadow = '';
+              this.querySelector('.svc-line').style.opacity = '0';
+            "
+          >
+            <div
+              class="svc-line"
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background: linear-gradient(
+                  90deg,
+                  #dc2626,
+                  #b91c1c,
+                  transparent
+                );
+                opacity: 0;
+                transition: opacity 0.3s;
+              "
+            ></div>
+            <div
+              style="
+                width: 54px;
+                height: 54px;
+                border-radius: 16px;
+                background: rgba(192, 57, 43, 0.15);
+                border: 1px solid rgba(192, 57, 43, 0.3);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 26px;
+                margin-bottom: 20px;
+              "
+            >
+              ⚡
+            </div>
+            <h3
+              style="
+                font-family: &quot;Sora&quot;, sans-serif;
+                font-size: 19px;
+                font-weight: 700;
+                color: var(--txt);
+                margin-bottom: 10px;
+              "
+            >
+              Stratejik Planlama
+            </h3>
+            <p style="font-size: 14px; color: var(--muted); line-height: 1.75">
+              Veriye dayalı stratejik planlama ile hedeflerinize ulaşmanızı
+              sağlarız.
+            </p>
+            <div
+              style="
+                margin-top: 18px;
+                font-size: 13px;
+                font-weight: 700;
+                color: #dc2626;
+                display: inline-flex;
+                align-items: center;
+                gap: 5px;
+              "
+            >
+              Daha Fazla →
+            </div>
+          </div>
+          <div
+            class="rv d3"
+            style="
+              background: linear-gradient(
+                160deg,
+                rgba(60, 8, 8, 0.5) 0%,
+                rgba(15, 23, 42, 0.65) 100%
+              );
+              backdrop-filter: blur(15px);
+              border: 1px solid rgba(192, 57, 43, 0.3);
+              border-radius: 20px;
+              padding: 32px;
+              transition: all 0.35s;
+              position: relative;
+              overflow: hidden;
+            "
+            onmouseover="
+              this.style.borderColor = 'rgba(229,57,53,.55)';
+              this.style.transform = 'translateY(-6px)';
+              this.style.boxShadow = '0 24px 60px rgba(0,0,0,.5)';
+              this.querySelector('.svc-line').style.opacity = '1';
+            "
+            onmouseout="
+              this.style.borderColor = 'rgba(192,57,43,.3)';
+              this.style.transform = '';
+              this.style.boxShadow = '';
+              this.querySelector('.svc-line').style.opacity = '0';
+            "
+          >
+            <div
+              class="svc-line"
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background: linear-gradient(
+                  90deg,
+                  #dc2626,
+                  #b91c1c,
+                  transparent
+                );
+                opacity: 0;
+                transition: opacity 0.3s;
+              "
+            ></div>
+            <div
+              style="
+                width: 54px;
+                height: 54px;
+                border-radius: 16px;
+                background: rgba(192, 57, 43, 0.15);
+                border: 1px solid rgba(192, 57, 43, 0.3);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 26px;
+                margin-bottom: 20px;
+              "
+            >
+              💎
+            </div>
+            <h3
+              style="
+                font-family: &quot;Sora&quot;, sans-serif;
+                font-size: 19px;
+                font-weight: 700;
+                color: var(--txt);
+                margin-bottom: 10px;
+              "
+            >
+              Teknik Destek
+            </h3>
+            <p style="font-size: 14px; color: var(--muted); line-height: 1.75">
+              7/24 kesintisiz teknik destek ile yanınızdayız.
+            </p>
+            <div
+              style="
+                margin-top: 18px;
+                font-size: 13px;
+                font-weight: 700;
+                color: #dc2626;
+                display: inline-flex;
+                align-items: center;
+                gap: 5px;
+              "
+            >
+              Daha Fazla →
+            </div>
+          </div>
+          <div
+            class="rv d1"
+            style="
+              background: linear-gradient(
+                160deg,
+                rgba(60, 8, 8, 0.5) 0%,
+                rgba(15, 23, 42, 0.65) 100%
+              );
+              backdrop-filter: blur(15px);
+              border: 1px solid rgba(192, 57, 43, 0.3);
+              border-radius: 20px;
+              padding: 32px;
+              transition: all 0.35s;
+              position: relative;
+              overflow: hidden;
+            "
+            onmouseover="
+              this.style.borderColor = 'rgba(229,57,53,.55)';
+              this.style.transform = 'translateY(-6px)';
+              this.style.boxShadow = '0 24px 60px rgba(0,0,0,.5)';
+              this.querySelector('.svc-line').style.opacity = '1';
+            "
+            onmouseout="
+              this.style.borderColor = 'rgba(192,57,43,.3)';
+              this.style.transform = '';
+              this.style.boxShadow = '';
+              this.querySelector('.svc-line').style.opacity = '0';
+            "
+          >
+            <div
+              class="svc-line"
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background: linear-gradient(
+                  90deg,
+                  #dc2626,
+                  #b91c1c,
+                  transparent
+                );
+                opacity: 0;
+                transition: opacity 0.3s;
+              "
+            ></div>
+            <div
+              style="
+                width: 54px;
+                height: 54px;
+                border-radius: 16px;
+                background: rgba(192, 57, 43, 0.15);
+                border: 1px solid rgba(192, 57, 43, 0.3);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 26px;
+                margin-bottom: 20px;
+              "
+            >
+              🔧
+            </div>
+            <h3
+              style="
+                font-family: &quot;Sora&quot;, sans-serif;
+                font-size: 19px;
+                font-weight: 700;
+                color: var(--txt);
+                margin-bottom: 10px;
+              "
+            >
+              Proje Yönetimi
+            </h3>
+            <p style="font-size: 14px; color: var(--muted); line-height: 1.75">
+              Projenizi zamanında ve bütçe dahilinde teslim etmek önceliğimiz.
+            </p>
+            <div
+              style="
+                margin-top: 18px;
+                font-size: 13px;
+                font-weight: 700;
+                color: #dc2626;
+                display: inline-flex;
+                align-items: center;
+                gap: 5px;
+              "
+            >
+              Daha Fazla →
+            </div>
+          </div>
+          <div
+            class="rv d2"
+            style="
+              background: linear-gradient(
+                160deg,
+                rgba(60, 8, 8, 0.5) 0%,
+                rgba(15, 23, 42, 0.65) 100%
+              );
+              backdrop-filter: blur(15px);
+              border: 1px solid rgba(192, 57, 43, 0.3);
+              border-radius: 20px;
+              padding: 32px;
+              transition: all 0.35s;
+              position: relative;
+              overflow: hidden;
+            "
+            onmouseover="
+              this.style.borderColor = 'rgba(229,57,53,.55)';
+              this.style.transform = 'translateY(-6px)';
+              this.style.boxShadow = '0 24px 60px rgba(0,0,0,.5)';
+              this.querySelector('.svc-line').style.opacity = '1';
+            "
+            onmouseout="
+              this.style.borderColor = 'rgba(192,57,43,.3)';
+              this.style.transform = '';
+              this.style.boxShadow = '';
+              this.querySelector('.svc-line').style.opacity = '0';
+            "
+          >
+            <div
+              class="svc-line"
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background: linear-gradient(
+                  90deg,
+                  #dc2626,
+                  #b91c1c,
+                  transparent
+                );
+                opacity: 0;
+                transition: opacity 0.3s;
+              "
+            ></div>
+            <div
+              style="
+                width: 54px;
+                height: 54px;
+                border-radius: 16px;
+                background: rgba(192, 57, 43, 0.15);
+                border: 1px solid rgba(192, 57, 43, 0.3);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 26px;
+                margin-bottom: 20px;
+              "
+            >
+              📈
+            </div>
+            <h3
+              style="
+                font-family: &quot;Sora&quot;, sans-serif;
+                font-size: 19px;
+                font-weight: 700;
+                color: var(--txt);
+                margin-bottom: 10px;
+              "
+            >
+              Eğitim & Gelişim
+            </h3>
+            <p style="font-size: 14px; color: var(--muted); line-height: 1.75">
+              Ekibinizi güçlendiren kapsamlı eğitim programları sunuyoruz.
+            </p>
+            <div
+              style="
+                margin-top: 18px;
+                font-size: 13px;
+                font-weight: 700;
+                color: #dc2626;
+                display: inline-flex;
+                align-items: center;
+                gap: 5px;
+              "
+            >
+              Daha Fazla →
+            </div>
+          </div>
+          <div
+            class="rv d3"
+            style="
+              background: linear-gradient(
+                160deg,
+                rgba(60, 8, 8, 0.5) 0%,
+                rgba(15, 23, 42, 0.65) 100%
+              );
+              backdrop-filter: blur(15px);
+              border: 1px solid rgba(192, 57, 43, 0.3);
+              border-radius: 20px;
+              padding: 32px;
+              transition: all 0.35s;
+              position: relative;
+              overflow: hidden;
+            "
+            onmouseover="
+              this.style.borderColor = 'rgba(229,57,53,.55)';
+              this.style.transform = 'translateY(-6px)';
+              this.style.boxShadow = '0 24px 60px rgba(0,0,0,.5)';
+              this.querySelector('.svc-line').style.opacity = '1';
+            "
+            onmouseout="
+              this.style.borderColor = 'rgba(192,57,43,.3)';
+              this.style.transform = '';
+              this.style.boxShadow = '';
+              this.querySelector('.svc-line').style.opacity = '0';
+            "
+          >
+            <div
+              class="svc-line"
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background: linear-gradient(
+                  90deg,
+                  #dc2626,
+                  #b91c1c,
+                  transparent
+                );
+                opacity: 0;
+                transition: opacity 0.3s;
+              "
+            ></div>
+            <div
+              style="
+                width: 54px;
+                height: 54px;
+                border-radius: 16px;
+                background: rgba(192, 57, 43, 0.15);
+                border: 1px solid rgba(192, 57, 43, 0.3);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 26px;
+                margin-bottom: 20px;
+              "
+            >
+              ✅
+            </div>
+            <h3
+              style="
+                font-family: &quot;Sora&quot;, sans-serif;
+                font-size: 19px;
+                font-weight: 700;
+                color: var(--txt);
+                margin-bottom: 10px;
+              "
+            >
+              Kalite Güvence
+            </h3>
+            <p style="font-size: 14px; color: var(--muted); line-height: 1.75">
+              En yüksek standartlarda kalite güvencesi sağlıyoruz.
+            </p>
+            <div
+              style="
+                margin-top: 18px;
+                font-size: 13px;
+                font-weight: 700;
+                color: #dc2626;
+                display: inline-flex;
+                align-items: center;
+                gap: 5px;
+              "
+            >
+              Daha Fazla →
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div
+      style="
+        height: 1px;
+        background: rgba(192, 57, 43, 0.28);
+        position: relative;
+        z-index: 1;
+      "
+    ></div>
+
+    <section
+      id="about"
+      style="
+        position: relative;
+        z-index: 1;
+        padding: 96px 48px;
+        background: transparent;
+      "
+    >
+      <div class="wrap">
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+          "
+        >
+          <div>
+            <div class="pill rv">HAKKIMIZDA</div>
+            <h2
+              class="rv d1"
+              style="
+                font-family: &quot;Sora&quot;, sans-serif;
+                font-size: clamp(30px, 4.5vw, 54px);
+                font-weight: 800;
+                line-height: 1.02;
+                color: var(--txt);
+                margin-bottom: 20px;
+              "
+            >
+              NEDEN
+              <span
+                style="
+                  background: linear-gradient(135deg, #dc2626, #b91c1c);
+                  -webkit-background-clip: text;
+                  background-clip: text;
+                  color: transparent;
+                "
+                >LAY7NX?</span
+              >
+            </h2>
+            <p
+              class="rv d2"
+              style="
+                font-size: 15px;
+                color: var(--muted);
+                line-height: 1.9;
+                margin-bottom: 28px;
+              "
+            >
+              Biz, işinde uzman bir ekibiz. Müşteri memnuniyetini her şeyin
+              önünde tutarak en iyi sonuçları sunmayı hedefliyoruz. Yıllarca
+              süren deneyimimiz ve güçlü metodolojimizle sektörde güvenilir bir
+              isim olduk.
+            </p>
+            <div
+              class="rv d3"
+              style="display: flex; flex-direction: column; gap: 12px"
+            >
+              <div
+                style="
+                  display: flex;
+                  gap: 14px;
+                  align-items: flex-start;
+                  padding: 16px 18px;
+                  background: rgba(15, 23, 42, 0.55);
+                  backdrop-filter: blur(10px);
+                  border: 1px solid rgba(192, 57, 43, 0.3);
+                  border-radius: 16px;
+                  transition: all 0.25s;
+                "
+                onmouseover="this.style.borderColor = 'rgba(229,57,53,.5)'"
+                onmouseout="this.style.borderColor = 'rgba(192,57,43,.3)'"
+              >
+                <span style="font-size: 22px; flex-shrink: 0">✅</span>
+                <div>
+                  <div
+                    style="
+                      font-family: &quot;Sora&quot;, sans-serif;
+                      font-size: 17px;
+                      font-weight: 700;
+                      color: var(--txt);
+                      margin-bottom: 3px;
+                    "
+                  >
+                    Kanıtlanmış Deneyim
+                  </div>
+                  <div
+                    style="
+                      font-size: 13px;
+                      color: var(--muted);
+                      line-height: 1.6;
+                    "
+                  >
+                    Yıllarca süren başarılı proje geçmişi ile güvenilir çözümler
+                    sunuyoruz.
+                  </div>
+                </div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  gap: 14px;
+                  align-items: flex-start;
+                  padding: 16px 18px;
+                  background: rgba(15, 23, 42, 0.55);
+                  backdrop-filter: blur(10px);
+                  border: 1px solid rgba(192, 57, 43, 0.3);
+                  border-radius: 16px;
+                  transition: all 0.25s;
+                "
+                onmouseover="this.style.borderColor = 'rgba(229,57,53,.5)'"
+                onmouseout="this.style.borderColor = 'rgba(192,57,43,.3)'"
+              >
+                <span style="font-size: 22px; flex-shrink: 0">🎯</span>
+                <div>
+                  <div
+                    style="
+                      font-family: &quot;Sora&quot;, sans-serif;
+                      font-size: 17px;
+                      font-weight: 700;
+                      color: var(--txt);
+                      margin-bottom: 3px;
+                    "
+                  >
+                    Sonuç Odaklı Yaklaşım
+                  </div>
+                  <div
+                    style="
+                      font-size: 13px;
+                      color: var(--muted);
+                      line-height: 1.6;
+                    "
+                  >
+                    Ölçülebilir sonuçlar ve somut faydalar yaratmak için
+                    çalışıyoruz.
+                  </div>
+                </div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  gap: 14px;
+                  align-items: flex-start;
+                  padding: 16px 18px;
+                  background: rgba(15, 23, 42, 0.55);
+                  backdrop-filter: blur(10px);
+                  border: 1px solid rgba(192, 57, 43, 0.3);
+                  border-radius: 16px;
+                  transition: all 0.25s;
+                "
+                onmouseover="this.style.borderColor = 'rgba(229,57,53,.5)'"
+                onmouseout="this.style.borderColor = 'rgba(192,57,43,.3)'"
+              >
+                <span style="font-size: 22px; flex-shrink: 0">🤝</span>
+                <div>
+                  <div
+                    style="
+                      font-family: &quot;Sora&quot;, sans-serif;
+                      font-size: 17px;
+                      font-weight: 700;
+                      color: var(--txt);
+                      margin-bottom: 3px;
+                    "
+                  >
+                    Güvenilir Ortaklık
+                  </div>
+                  <div
+                    style="
+                      font-size: 13px;
+                      color: var(--muted);
+                      line-height: 1.6;
+                    "
+                  >
+                    Uzun vadeli ilişkiler kurarak kesintisiz destek sağlıyoruz.
+                  </div>
+                </div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  gap: 14px;
+                  align-items: flex-start;
+                  padding: 16px 18px;
+                  background: rgba(15, 23, 42, 0.55);
+                  backdrop-filter: blur(10px);
+                  border: 1px solid rgba(192, 57, 43, 0.3);
+                  border-radius: 16px;
+                  transition: all 0.25s;
+                "
+                onmouseover="this.style.borderColor = 'rgba(229,57,53,.5)'"
+                onmouseout="this.style.borderColor = 'rgba(192,57,43,.3)'"
+              >
+                <span style="font-size: 22px; flex-shrink: 0">⚡</span>
+                <div>
+                  <div
+                    style="
+                      font-family: &quot;Sora&quot;, sans-serif;
+                      font-size: 17px;
+                      font-weight: 700;
+                      color: var(--txt);
+                      margin-bottom: 3px;
+                    "
+                  >
+                    Hızlı ve Verimli
+                  </div>
+                  <div
+                    style="
+                      font-size: 13px;
+                      color: var(--muted);
+                      line-height: 1.6;
+                    "
+                  >
+                    Zamanınıza değer veriyoruz; hızlı teslimat, yüksek
+                    verimlilik.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="rv d2">
+            <div
+              style="
+                background: linear-gradient(
+                  160deg,
+                  rgba(60, 8, 8, 0.55) 0%,
+                  rgba(15, 23, 42, 0.7) 100%
+                );
+                backdrop-filter: blur(20px);
+                border: 1px solid rgba(192, 57, 43, 0.38);
+                border-radius: 24px;
+                padding: 36px;
+                position: relative;
+                overflow: hidden;
+              "
+            >
+              <div
+                style="
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  height: 3px;
+                  background: linear-gradient(90deg, #dc2626, #b91c1c, #f59e0b);
+                "
+              ></div>
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: 1fr 1fr;
+                  gap: 16px;
+                  margin-bottom: 24px;
+                "
+              >
+                <div
+                  style="
+                    background: rgba(2, 6, 23, 0.6);
+                    border-radius: 18px;
+                    padding: 26px;
+                    text-align: center;
+                    border: 1px solid rgba(192, 57, 43, 0.25);
+                    position: relative;
+                    overflow: hidden;
+                  "
+                >
+                  <div
+                    style="
+                      font-family: &quot;Sora&quot;, sans-serif;
+                      font-size: 44px;
+                      font-weight: 800;
+                      color: #dc2626;
+                      line-height: 1;
+                      margin-bottom: 8px;
+                      position: relative;
+                    "
+                    data-count="15"
+                    data-suf="+"
+                  >
+                    15+
+                  </div>
+                  <div
+                    style="
+                      font-size: 12px;
+                      color: var(--muted);
+                      font-weight: 600;
+                      text-transform: uppercase;
+                      letter-spacing: 0.5px;
+                      position: relative;
+                    "
+                  >
+                    Yıl Deneyim
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: rgba(2, 6, 23, 0.6);
+                    border-radius: 18px;
+                    padding: 26px;
+                    text-align: center;
+                    border: 1px solid rgba(192, 57, 43, 0.25);
+                    position: relative;
+                    overflow: hidden;
+                  "
+                >
+                  <div
+                    style="
+                      font-family: &quot;Sora&quot;, sans-serif;
+                      font-size: 44px;
+                      font-weight: 800;
+                      color: #dc2626;
+                      line-height: 1;
+                      margin-bottom: 8px;
+                      position: relative;
+                    "
+                    data-count="500"
+                    data-suf="+"
+                  >
+                    500+
+                  </div>
+                  <div
+                    style="
+                      font-size: 12px;
+                      color: var(--muted);
+                      font-weight: 600;
+                      text-transform: uppercase;
+                      letter-spacing: 0.5px;
+                      position: relative;
+                    "
+                  >
+                    Mutlu Müşteri
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: rgba(2, 6, 23, 0.6);
+                    border-radius: 18px;
+                    padding: 26px;
+                    text-align: center;
+                    border: 1px solid rgba(192, 57, 43, 0.25);
+                    position: relative;
+                    overflow: hidden;
+                  "
+                >
+                  <div
+                    style="
+                      font-family: &quot;Sora&quot;, sans-serif;
+                      font-size: 44px;
+                      font-weight: 800;
+                      color: #dc2626;
+                      line-height: 1;
+                      margin-bottom: 8px;
+                      position: relative;
+                    "
+                    data-count="98"
+                    data-suf="%"
+                  >
+                    98%
+                  </div>
+                  <div
+                    style="
+                      font-size: 12px;
+                      color: var(--muted);
+                      font-weight: 600;
+                      text-transform: uppercase;
+                      letter-spacing: 0.5px;
+                      position: relative;
+                    "
+                  >
+                    Memnuniyet
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: rgba(2, 6, 23, 0.6);
+                    border-radius: 18px;
+                    padding: 26px;
+                    text-align: center;
+                    border: 1px solid rgba(192, 57, 43, 0.25);
+                    position: relative;
+                    overflow: hidden;
+                  "
+                >
+                  <div
+                    style="
+                      font-family: &quot;Sora&quot;, sans-serif;
+                      font-size: 44px;
+                      font-weight: 800;
+                      color: #dc2626;
+                      line-height: 1;
+                      margin-bottom: 8px;
+                      position: relative;
+                    "
+                    data-count="247"
+                    data-suf="/"
+                  >
+                    24/7
+                  </div>
+                  <div
+                    style="
+                      font-size: 12px;
+                      color: var(--muted);
+                      font-weight: 600;
+                      text-transform: uppercase;
+                      letter-spacing: 0.5px;
+                      position: relative;
+                    "
+                  >
+                    Destek
+                  </div>
+                </div>
+              </div>
+              <div
+                style="
+                  padding: 18px;
+                  background: #dc262612;
+                  border-radius: 14px;
+                  border: 1px solid #dc262625;
+                  font-size: 14px;
+                  color: var(--muted);
+                  line-height: 1.7;
+                  font-style: italic;
+                "
+              >
+                "Gerçek anlamda değer yaratan bir ekip. Süreç boyunca şeffaf ve
+                çözüm odaklı çalıştılar, sonuçtan son derece memnunum."<br />
+                <strong style="color: var(--txt); font-style: normal"
+                  >— Mehmet T., Genel Müdür, Nova A.Ş.</strong
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="portfolio"
+      style="
+        position: relative;
+        z-index: 1;
+        padding: 96px 48px;
+        background: rgba(15, 23, 42, 0.45);
+        backdrop-filter: blur(10px);
+      "
+    >
+      <div class="wrap">
+        <div style="text-align: center; margin-bottom: 56px">
+          <div class="pill rv">PORTFOLYO</div>
+          <h2
+            class="rv d1"
+            style="
+              font-family: &quot;Sora&quot;, sans-serif;
+              font-size: clamp(32px, 5vw, 58px);
+              font-weight: 800;
+              color: var(--txt);
+              margin-bottom: 16px;
+            "
+          >
+            SEÇME
+            <span
+              style="
+                background: linear-gradient(135deg, #dc2626, #b91c1c);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+              "
+              >ÇALIŞMALAR</span
+            >
+          </h2>
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 180px;
+            gap: 16px;
+          "
+          class="rv"
+        >
+          <div
+            style="
+              grid-column: span 2;
+              grid-row: span 1;
+              background: linear-gradient(
+                160deg,
+                rgba(60, 8, 8, 0.5),
+                rgba(15, 23, 42, 0.65)
+              );
+              backdrop-filter: blur(15px);
+              border: 1px solid rgba(192, 57, 43, 0.3);
+              border-radius: 20px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              gap: 10px;
+              padding: 28px;
+              cursor: pointer;
+              transition: all 0.3s;
+              position: relative;
+              overflow: hidden;
+            "
+            onmouseover="
+              this.querySelector('.port-overlay').style.opacity = '1';
+              this.style.borderColor = 'rgba(229,57,53,.55)';
+            "
+            onmouseout="
+              this.querySelector('.port-overlay').style.opacity = '0';
+              this.style.borderColor = 'rgba(192,57,43,.3)';
+            "
+          >
+            <div
+              class="port-overlay"
+              style="
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(
+                  135deg,
+                  rgba(192, 57, 43, 0.2),
+                  rgba(229, 57, 53, 0.15)
+                );
+                opacity: 0;
+                transition: opacity 0.3s;
+              "
+            ></div>
+            <div style="font-size: 38px; position: relative">🎨</div>
+            <div
+              style="
+                position: absolute;
+                top: 12px;
+                left: 12px;
+                padding: 4px 10px;
+                background: rgba(192, 57, 43, 0.2);
+                border: 1px solid rgba(192, 57, 43, 0.35);
+                border-radius: 99px;
+                font-size: 10px;
+                font-weight: 700;
+                color: #dc2626;
+                font-family: &quot;Inconsolata&quot;, monospace;
+                letter-spacing: 0.5px;
+              "
+            >
+              Tasarım
+            </div>
+            <div
+              style="
+                font-family: &quot;Sora&quot;, sans-serif;
+                font-size: 16px;
+                font-weight: 700;
+                color: var(--txt);
+                text-align: center;
+                position: relative;
+              "
+            >
+              Proje Alfa
+            </div>
+            <div
+              style="
+                font-size: 13px;
+                color: var(--muted);
+                text-align: center;
+                position: relative;
+              "
+            >
+              Kapsamlı web tasarım projesi
+            </div>
+          </div>
+          <div
+            style="
+              grid-column: span 1;
+              grid-row: span 1;
+              background: linear-gradient(
+                160deg,
+                rgba(60, 8, 8, 0.5),
+                rgba(15, 23, 42, 0.65)
+              );
+              backdrop-filter: blur(15px);
+              border: 1px solid rgba(192, 57, 43, 0.3);
+              border-radius: 20px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              gap: 10px;
+              padding: 28px;
+              cursor: pointer;
+              transition: all 0.3s;
+              position: relative;
+              overflow: hidden;
+            "
+            onmouseover="
+              this.querySelector('.port-overlay').style.opacity = '1';
+              this.style.borderColor = 'rgba(229,57,53,.55)';
+            "
+            onmouseout="
+              this.querySelector('.port-overlay').style.opacity = '0';
+              this.style.borderColor = 'rgba(192,57,43,.3)';
+            "
+          >
+            <div
+              class="port-overlay"
+              style="
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(
+                  135deg,
+                  rgba(192, 57, 43, 0.2),
+                  rgba(229, 57, 53, 0.15)
+                );
+                opacity: 0;
+                transition: opacity 0.3s;
+              "
+            ></div>
+            <div style="font-size: 38px; position: relative">⚡</div>
+            <div
+              style="
+                position: absolute;
+                top: 12px;
+                left: 12px;
+                padding: 4px 10px;
+                background: rgba(192, 57, 43, 0.2);
+                border: 1px solid rgba(192, 57, 43, 0.35);
+                border-radius: 99px;
+                font-size: 10px;
+                font-weight: 700;
+                color: #dc2626;
+                font-family: &quot;Inconsolata&quot;, monospace;
+                letter-spacing: 0.5px;
+              "
+            >
+              Mobil
+            </div>
+            <div
+              style="
+                font-family: &quot;Sora&quot;, sans-serif;
+                font-size: 16px;
+                font-weight: 700;
+                color: var(--txt);
+                text-align: center;
+                position: relative;
+              "
+            >
+              Proje Beta
+            </div>
+            <div
+              style="
+                font-size: 13px;
+                color: var(--muted);
+                text-align: center;
+                position: relative;
+              "
+            >
+              Mobil uygulama
+            </div>
+          </div>
+          <div
+            style="
+              grid-column: span 1;
+              grid-row: span 2;
+              background: linear-gradient(
+                160deg,
+                rgba(60, 8, 8, 0.5),
+                rgba(15, 23, 42, 0.65)
+              );
+              backdrop-filter: blur(15px);
+              border: 1px solid rgba(192, 57, 43, 0.3);
+              border-radius: 20px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              gap: 10px;
+              padding: 28px;
+              cursor: pointer;
+              transition: all 0.3s;
+              position: relative;
+              overflow: hidden;
+            "
+            onmouseover="
+              this.querySelector('.port-overlay').style.opacity = '1';
+              this.style.borderColor = 'rgba(229,57,53,.55)';
+            "
+            onmouseout="
+              this.querySelector('.port-overlay').style.opacity = '0';
+              this.style.borderColor = 'rgba(192,57,43,.3)';
+            "
+          >
+            <div
+              class="port-overlay"
+              style="
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(
+                  135deg,
+                  rgba(192, 57, 43, 0.2),
+                  rgba(229, 57, 53, 0.15)
+                );
+                opacity: 0;
+                transition: opacity 0.3s;
+              "
+            ></div>
+            <div style="font-size: 52px; position: relative">💎</div>
+            <div
+              style="
+                position: absolute;
+                top: 12px;
+                left: 12px;
+                padding: 4px 10px;
+                background: rgba(192, 57, 43, 0.2);
+                border: 1px solid rgba(192, 57, 43, 0.35);
+                border-radius: 99px;
+                font-size: 10px;
+                font-weight: 700;
+                color: #dc2626;
+                font-family: &quot;Inconsolata&quot;, monospace;
+                letter-spacing: 0.5px;
+              "
+            >
+              Marka
+            </div>
+            <div
+              style="
+                font-family: &quot;Sora&quot;, sans-serif;
+                font-size: 20px;
+                font-weight: 700;
+                color: var(--txt);
+                text-align: center;
+                position: relative;
+              "
+            >
+              Proje Gama
+            </div>
+            <div
+              style="
+                font-size: 13px;
+                color: var(--muted);
+                text-align: center;
+                position: relative;
+              "
+            >
+              Marka kimliği
+            </div>
+          </div>
+          <div
+            style="
+              grid-column: span 1;
+              grid-row: span 1;
+              background: linear-gradient(
+                160deg,
+                rgba(60, 8, 8, 0.5),
+                rgba(15, 23, 42, 0.65)
+              );
+              backdrop-filter: blur(15px);
+              border: 1px solid rgba(192, 57, 43, 0.3);
+              border-radius: 20px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              gap: 10px;
+              padding: 28px;
+              cursor: pointer;
+              transition: all 0.3s;
+              position: relative;
+              overflow: hidden;
+            "
+            onmouseover="
+              this.querySelector('.port-overlay').style.opacity = '1';
+              this.style.borderColor = 'rgba(229,57,53,.55)';
+            "
+            onmouseout="
+              this.querySelector('.port-overlay').style.opacity = '0';
+              this.style.borderColor = 'rgba(192,57,43,.3)';
+            "
+          >
+            <div
+              class="port-overlay"
+              style="
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(
+                  135deg,
+                  rgba(192, 57, 43, 0.2),
+                  rgba(229, 57, 53, 0.15)
+                );
+                opacity: 0;
+                transition: opacity 0.3s;
+              "
+            ></div>
+            <div style="font-size: 38px; position: relative">🚀</div>
+            <div
+              style="
+                position: absolute;
+                top: 12px;
+                left: 12px;
+                padding: 4px 10px;
+                background: rgba(192, 57, 43, 0.2);
+                border: 1px solid rgba(192, 57, 43, 0.35);
+                border-radius: 99px;
+                font-size: 10px;
+                font-weight: 700;
+                color: #dc2626;
+                font-family: &quot;Inconsolata&quot;, monospace;
+                letter-spacing: 0.5px;
+              "
+            >
+              E-ticaret
+            </div>
+            <div
+              style="
+                font-family: &quot;Sora&quot;, sans-serif;
+                font-size: 16px;
+                font-weight: 700;
+                color: var(--txt);
+                text-align: center;
+                position: relative;
+              "
+            >
+              Proje Delta
+            </div>
+            <div
+              style="
+                font-size: 13px;
+                color: var(--muted);
+                text-align: center;
+                position: relative;
+              "
+            >
+              E-ticaret platformu
+            </div>
+          </div>
+          <div
+            style="
+              grid-column: span 1;
+              grid-row: span 1;
+              background: linear-gradient(
+                160deg,
+                rgba(60, 8, 8, 0.5),
+                rgba(15, 23, 42, 0.65)
+              );
+              backdrop-filter: blur(15px);
+              border: 1px solid rgba(192, 57, 43, 0.3);
+              border-radius: 20px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              gap: 10px;
+              padding: 28px;
+              cursor: pointer;
+              transition: all 0.3s;
+              position: relative;
+              overflow: hidden;
+            "
+            onmouseover="
+              this.querySelector('.port-overlay').style.opacity = '1';
+              this.style.borderColor = 'rgba(229,57,53,.55)';
+            "
+            onmouseout="
+              this.querySelector('.port-overlay').style.opacity = '0';
+              this.style.borderColor = 'rgba(192,57,43,.3)';
+            "
+          >
+            <div
+              class="port-overlay"
+              style="
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(
+                  135deg,
+                  rgba(192, 57, 43, 0.2),
+                  rgba(229, 57, 53, 0.15)
+                );
+                opacity: 0;
+                transition: opacity 0.3s;
+              "
+            ></div>
+            <div style="font-size: 38px; position: relative">🔧</div>
+            <div
+              style="
+                position: absolute;
+                top: 12px;
+                left: 12px;
+                padding: 4px 10px;
+                background: rgba(192, 57, 43, 0.2);
+                border: 1px solid rgba(192, 57, 43, 0.35);
+                border-radius: 99px;
+                font-size: 10px;
+                font-weight: 700;
+                color: #dc2626;
+                font-family: &quot;Inconsolata&quot;, monospace;
+                letter-spacing: 0.5px;
+              "
+            >
+              Teknik
+            </div>
+            <div
+              style="
+                font-family: &quot;Sora&quot;, sans-serif;
+                font-size: 16px;
+                font-weight: 700;
+                color: var(--txt);
+                text-align: center;
+                position: relative;
+              "
+            >
+              Proje Epsilon
+            </div>
+            <div
+              style="
+                font-size: 13px;
+                color: var(--muted);
+                text-align: center;
+                position: relative;
+              "
+            >
+              API entegrasyonu
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="blog"
+      style="
+        position: relative;
+        z-index: 1;
+        padding: 96px 48px;
+        background: transparent;
+      "
+    >
+      <div class="wrap">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 52px;
+          "
+        >
+          <div>
+            <div class="pill rv">BLOG & HABERLER</div>
+            <h2
+              class="rv d1"
+              style="
+                font-family: &quot;Sora&quot;, sans-serif;
+                font-size: clamp(32px, 5vw, 54px);
+                font-weight: 800;
+                color: var(--txt);
+                margin-bottom: 0;
+              "
+            >
+              SON
+              <span
+                style="
+                  background: linear-gradient(135deg, #dc2626, #b91c1c);
+                  -webkit-background-clip: text;
+                  background-clip: text;
+                  color: transparent;
+                "
+                >YAZILAR</span
+              >
+            </h2>
+          </div>
+          <a
+            href="#"
+            style="
+              display: inline-flex;
+              align-items: center;
+              gap: 7px;
+              padding: 10px 20px;
+              border-radius: 10px;
+              background: transparent;
+              color: #dc2626;
+              font-weight: 700;
+              font-size: 14px;
+              text-decoration: none;
+              border: 1px solid rgba(192, 57, 43, 0.4);
+              transition: all 0.2s;
+            "
+            onmouseover="this.style.background = 'rgba(192,57,43,.12)'"
+            onmouseout="this.style.background = 'transparent'"
+            >Tümünü Gör →</a
+          >
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 22px;
+          "
+        >
+          <div
+            class="rv d1"
+            style="
+              background: linear-gradient(
+                160deg,
+                rgba(60, 8, 8, 0.5),
+                rgba(15, 23, 42, 0.65)
+              );
+              backdrop-filter: blur(15px);
+              border: 1px solid rgba(192, 57, 43, 0.3);
+              border-radius: 20px;
+              overflow: hidden;
+              transition: all 0.35s;
+              cursor: pointer;
+            "
+            onmouseover="
+              this.style.borderColor = 'rgba(229,57,53,.55)';
+              this.style.transform = 'translateY(-5px)';
+              this.style.boxShadow = '0 20px 60px rgba(0,0,0,.5)';
+            "
+            onmouseout="
+              this.style.borderColor = 'rgba(192,57,43,.3)';
+              this.style.transform = '';
+              this.style.boxShadow = '';
+            "
+          >
+            <div
+              style="
+                height: 180px;
+                background: linear-gradient(
+                  135deg,
+                  rgba(192, 57, 43, 0.2),
+                  rgba(139, 0, 0, 0.15)
+                );
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 52px;
+              "
+            >
+              📱
+            </div>
+            <div style="padding: 24px">
+              <div
+                style="
+                  display: inline-flex;
+                  padding: 3px 12px;
+                  background: rgba(192, 57, 43, 0.18);
+                  border-radius: 99px;
+                  font-size: 11px;
+                  font-weight: 700;
+                  color: #dc2626;
+                  font-family: &quot;Inconsolata&quot;, monospace;
+                  letter-spacing: 0.5px;
+                  margin-bottom: 12px;
+                "
+              >
+                Teknoloji
+              </div>
+              <h3
+                style="
+                  font-family: &quot;Sora&quot;, sans-serif;
+                  font-size: 19px;
+                  font-weight: 700;
+                  color: var(--txt);
+                  margin-bottom: 10px;
+                  line-height: 1.3;
+                "
+              >
+                Dijital Dönüşümde Kritik 5 Adım
+              </h3>
+              <p
+                style="
+                  font-size: 14px;
+                  color: var(--muted);
+                  line-height: 1.7;
+                  margin-bottom: 16px;
+                "
+              >
+                İşletmenizi geleceğe hazırlamak için atmanız gereken temel
+                adımlar.
+              </p>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                "
+              >
+                <span
+                  style="
+                    font-size: 12px;
+                    color: var(--muted);
+                    font-family: &quot;Inconsolata&quot;, monospace;
+                  "
+                  >📅 15 Ocak 2025</span
+                >
+                <span style="font-size: 13px; font-weight: 700; color: #dc2626"
+                  >Okuyun →</span
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="rv d2"
+            style="
+              background: linear-gradient(
+                160deg,
+                rgba(60, 8, 8, 0.5),
+                rgba(15, 23, 42, 0.65)
+              );
+              backdrop-filter: blur(15px);
+              border: 1px solid rgba(192, 57, 43, 0.3);
+              border-radius: 20px;
+              overflow: hidden;
+              transition: all 0.35s;
+              cursor: pointer;
+            "
+            onmouseover="
+              this.style.borderColor = 'rgba(229,57,53,.55)';
+              this.style.transform = 'translateY(-5px)';
+              this.style.boxShadow = '0 20px 60px rgba(0,0,0,.5)';
+            "
+            onmouseout="
+              this.style.borderColor = 'rgba(192,57,43,.3)';
+              this.style.transform = '';
+              this.style.boxShadow = '';
+            "
+          >
+            <div
+              style="
+                height: 180px;
+                background: linear-gradient(
+                  135deg,
+                  rgba(192, 57, 43, 0.2),
+                  rgba(139, 0, 0, 0.15)
+                );
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 52px;
+              "
+            >
+              📊
+            </div>
+            <div style="padding: 24px">
+              <div
+                style="
+                  display: inline-flex;
+                  padding: 3px 12px;
+                  background: rgba(192, 57, 43, 0.18);
+                  border-radius: 99px;
+                  font-size: 11px;
+                  font-weight: 700;
+                  color: #dc2626;
+                  font-family: &quot;Inconsolata&quot;, monospace;
+                  letter-spacing: 0.5px;
+                  margin-bottom: 12px;
+                "
+              >
+                Strateji
+              </div>
+              <h3
+                style="
+                  font-family: &quot;Sora&quot;, sans-serif;
+                  font-size: 19px;
+                  font-weight: 700;
+                  color: var(--txt);
+                  margin-bottom: 10px;
+                  line-height: 1.3;
+                "
+              >
+                2025'te Pazarlama Trendleri
+              </h3>
+              <p
+                style="
+                  font-size: 14px;
+                  color: var(--muted);
+                  line-height: 1.7;
+                  margin-bottom: 16px;
+                "
+              >
+                Bu yıl öne çıkacak pazarlama stratejileri ve uygulanabilir
+                ipuçları.
+              </p>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                "
+              >
+                <span
+                  style="
+                    font-size: 12px;
+                    color: var(--muted);
+                    font-family: &quot;Inconsolata&quot;, monospace;
+                  "
+                  >📅 8 Ocak 2025</span
+                >
+                <span style="font-size: 13px; font-weight: 700; color: #dc2626"
+                  >Okuyun →</span
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="rv d3"
+            style="
+              background: linear-gradient(
+                160deg,
+                rgba(60, 8, 8, 0.5),
+                rgba(15, 23, 42, 0.65)
+              );
+              backdrop-filter: blur(15px);
+              border: 1px solid rgba(192, 57, 43, 0.3);
+              border-radius: 20px;
+              overflow: hidden;
+              transition: all 0.35s;
+              cursor: pointer;
+            "
+            onmouseover="
+              this.style.borderColor = 'rgba(229,57,53,.55)';
+              this.style.transform = 'translateY(-5px)';
+              this.style.boxShadow = '0 20px 60px rgba(0,0,0,.5)';
+            "
+            onmouseout="
+              this.style.borderColor = 'rgba(192,57,43,.3)';
+              this.style.transform = '';
+              this.style.boxShadow = '';
+            "
+          >
+            <div
+              style="
+                height: 180px;
+                background: linear-gradient(
+                  135deg,
+                  rgba(192, 57, 43, 0.2),
+                  rgba(139, 0, 0, 0.15)
+                );
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 52px;
+              "
+            >
+              🎨
+            </div>
+            <div style="padding: 24px">
+              <div
+                style="
+                  display: inline-flex;
+                  padding: 3px 12px;
+                  background: rgba(192, 57, 43, 0.18);
+                  border-radius: 99px;
+                  font-size: 11px;
+                  font-weight: 700;
+                  color: #dc2626;
+                  font-family: &quot;Inconsolata&quot;, monospace;
+                  letter-spacing: 0.5px;
+                  margin-bottom: 12px;
+                "
+              >
+                Tasarım
+              </div>
+              <h3
+                style="
+                  font-family: &quot;Sora&quot;, sans-serif;
+                  font-size: 19px;
+                  font-weight: 700;
+                  color: var(--txt);
+                  margin-bottom: 10px;
+                  line-height: 1.3;
+                "
+              >
+                Kullanıcı Deneyimi Neden Önemli?
+              </h3>
+              <p
+                style="
+                  font-size: 14px;
+                  color: var(--muted);
+                  line-height: 1.7;
+                  margin-bottom: 16px;
+                "
+              >
+                İyi bir UX tasarımının işletme başarısına katkısı ve temel
+                prensipler.
+              </p>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                "
+              >
+                <span
+                  style="
+                    font-size: 12px;
+                    color: var(--muted);
+                    font-family: &quot;Inconsolata&quot;, monospace;
+                  "
+                  >📅 2 Ocak 2025</span
+                >
+                <span style="font-size: 13px; font-weight: 700; color: #dc2626"
+                  >Okuyun →</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      style="
+        position: relative;
+        z-index: 1;
+        padding: 80px 48px;
+        background: rgba(15, 23, 42, 0.5);
+        backdrop-filter: blur(15px);
+        border-top: 1px solid rgba(192, 57, 43, 0.28);
+        border-bottom: 1px solid rgba(192, 57, 43, 0.28);
+      "
+    >
+      <div class="wrap">
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0;
+          "
+        >
+          <div
+            class="rv d1"
+            style="
+              text-align: center;
+              padding: 32px 20px;
+              border-right: 1px solid rgba(192, 57, 43, 0.25);
+            "
+          >
+            <div
+              style="
+                font-family: &quot;Sora&quot;, sans-serif;
+                font-size: 58px;
+                font-weight: 800;
+                color: #dc2626;
+                line-height: 1;
+                margin-bottom: 10px;
+              "
+              data-count="15"
+              data-suf="+"
+            >
+              15+
+            </div>
+            <div
+              style="
+                font-size: 14px;
+                color: var(--muted);
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.8px;
+              "
+            >
+              Yıl Deneyim
+            </div>
+          </div>
+          <div
+            class="rv d2"
+            style="
+              text-align: center;
+              padding: 32px 20px;
+              border-right: 1px solid rgba(192, 57, 43, 0.25);
+            "
+          >
+            <div
+              style="
+                font-family: &quot;Sora&quot;, sans-serif;
+                font-size: 58px;
+                font-weight: 800;
+                color: #dc2626;
+                line-height: 1;
+                margin-bottom: 10px;
+              "
+              data-count="500"
+              data-suf="+"
+            >
+              500+
+            </div>
+            <div
+              style="
+                font-size: 14px;
+                color: var(--muted);
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.8px;
+              "
+            >
+              Mutlu Müşteri
+            </div>
+          </div>
+          <div
+            class="rv d3"
+            style="
+              text-align: center;
+              padding: 32px 20px;
+              border-right: 1px solid rgba(192, 57, 43, 0.25);
+            "
+          >
+            <div
+              style="
+                font-family: &quot;Sora&quot;, sans-serif;
+                font-size: 58px;
+                font-weight: 800;
+                color: #dc2626;
+                line-height: 1;
+                margin-bottom: 10px;
+              "
+              data-count="98"
+              data-suf="%"
+            >
+              98%
+            </div>
+            <div
+              style="
+                font-size: 14px;
+                color: var(--muted);
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.8px;
+              "
+            >
+              Memnuniyet
+            </div>
+          </div>
+          <div class="rv d4" style="text-align: center; padding: 32px 20px">
+            <div
+              style="
+                font-family: &quot;Sora&quot;, sans-serif;
+                font-size: 58px;
+                font-weight: 800;
+                color: #dc2626;
+                line-height: 1;
+                margin-bottom: 10px;
+              "
+              data-count="247"
+              data-suf="/"
+            >
+              24/7
+            </div>
+            <div
+              style="
+                font-size: 14px;
+                color: var(--muted);
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.8px;
+              "
+            >
+              Destek
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="team"
+      style="
+        position: relative;
+        z-index: 1;
+        padding: 96px 48px;
+        background: rgba(15, 23, 42, 0.45);
+        backdrop-filter: blur(10px);
+      "
+    >
+      <div class="wrap">
+        <div style="text-align: center; margin-bottom: 52px">
+          <div class="pill rv">EKİBİMİZ</div>
+          <h2
+            class="rv d1"
+            style="
+              font-family: &quot;Sora&quot;, sans-serif;
+              font-size: clamp(32px, 5vw, 56px);
+              font-weight: 800;
+              color: var(--txt);
+              margin-bottom: 16px;
+            "
+          >
+            UZMAN
+            <span
+              style="
+                background: linear-gradient(135deg, #dc2626, #b91c1c);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+              "
+              >EKİBİMİZ</span
+            >
+          </h2>
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+          "
+        >
+          <div
+            class="rv d1"
+            style="
+              background: linear-gradient(
+                160deg,
+                rgba(60, 8, 8, 0.5),
+                rgba(15, 23, 42, 0.65)
+              );
+              backdrop-filter: blur(15px);
+              border: 1px solid rgba(192, 57, 43, 0.3);
+              border-radius: 20px;
+              padding: 32px 24px;
+              text-align: center;
+              transition: all 0.35s;
+            "
+            onmouseover="
+              this.style.borderColor = 'rgba(229,57,53,.55)';
+              this.style.transform = 'translateY(-5px)';
+            "
+            onmouseout="
+              this.style.borderColor = 'rgba(192,57,43,.3)';
+              this.style.transform = '';
+            "
+          >
+            <div
+              style="
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #dc2626, #b91c1c);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 36px;
+                margin: 0 auto 20px;
+                box-shadow: 0 8px 24px #dc262635;
+              "
+            >
+              👨‍💼
+            </div>
+            <div
+              style="
+                font-family: &quot;Sora&quot;, sans-serif;
+                font-size: 18px;
+                font-weight: 700;
+                color: var(--txt);
+                margin-bottom: 6px;
+              "
+            >
+              Ahmet Yılmaz
+            </div>
+            <div
+              style="
+                font-size: 13px;
+                color: #dc2626;
+                font-weight: 600;
+                font-family: &quot;Inconsolata&quot;, monospace;
+              "
+            >
+              CEO & Kurucu
+            </div>
+            <div
+              style="
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+                margin-top: 16px;
+              "
+            >
+              <a
+                href="#"
+                style="
+                  width: 34px;
+                  height: 34px;
+                  border-radius: 8px;
+                  background: rgba(15, 23, 42, 0.6);
+                  border: 1px solid rgba(192, 57, 43, 0.3);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  text-decoration: none;
+                  transition: all 0.2s;
+                "
+                onmouseover="
+                  this.style.background = '#DC2626';
+                  this.style.borderColor = '#DC2626';
+                "
+                onmouseout="
+                  this.style.background = 'rgba(15,23,42,.6)';
+                  this.style.borderColor = 'rgba(192,57,43,.3)';
+                "
+                >𝕏</a
+              ><a
+                href="#"
+                style="
+                  width: 34px;
+                  height: 34px;
+                  border-radius: 8px;
+                  background: rgba(15, 23, 42, 0.6);
+                  border: 1px solid rgba(192, 57, 43, 0.3);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  text-decoration: none;
+                  transition: all 0.2s;
+                "
+                onmouseover="
+                  this.style.background = '#DC2626';
+                  this.style.borderColor = '#DC2626';
+                "
+                onmouseout="
+                  this.style.background = 'rgba(15,23,42,.6)';
+                  this.style.borderColor = 'rgba(192,57,43,.3)';
+                "
+                >in</a
+              ><a
+                href="#"
+                style="
+                  width: 34px;
+                  height: 34px;
+                  border-radius: 8px;
+                  background: rgba(15, 23, 42, 0.6);
+                  border: 1px solid rgba(192, 57, 43, 0.3);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  text-decoration: none;
+                  transition: all 0.2s;
+                "
+                onmouseover="
+                  this.style.background = '#DC2626';
+                  this.style.borderColor = '#DC2626';
+                "
+                onmouseout="
+                  this.style.background = 'rgba(15,23,42,.6)';
+                  this.style.borderColor = 'rgba(192,57,43,.3)';
+                "
+                >📧</a
+              >
+            </div>
+          </div>
+          <div
+            class="rv d2"
+            style="
+              background: linear-gradient(
+                160deg,
+                rgba(60, 8, 8, 0.5),
+                rgba(15, 23, 42, 0.65)
+              );
+              backdrop-filter: blur(15px);
+              border: 1px solid rgba(192, 57, 43, 0.3);
+              border-radius: 20px;
+              padding: 32px 24px;
+              text-align: center;
+              transition: all 0.35s;
+            "
+            onmouseover="
+              this.style.borderColor = 'rgba(229,57,53,.55)';
+              this.style.transform = 'translateY(-5px)';
+            "
+            onmouseout="
+              this.style.borderColor = 'rgba(192,57,43,.3)';
+              this.style.transform = '';
+            "
+          >
+            <div
+              style="
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #dc2626, #b91c1c);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 36px;
+                margin: 0 auto 20px;
+                box-shadow: 0 8px 24px #dc262635;
+              "
+            >
+              👩‍💻
+            </div>
+            <div
+              style="
+                font-family: &quot;Sora&quot;, sans-serif;
+                font-size: 18px;
+                font-weight: 700;
+                color: var(--txt);
+                margin-bottom: 6px;
+              "
+            >
+              Fatma Kaya
+            </div>
+            <div
+              style="
+                font-size: 13px;
+                color: #dc2626;
+                font-weight: 600;
+                font-family: &quot;Inconsolata&quot;, monospace;
+              "
+            >
+              CTO
+            </div>
+            <div
+              style="
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+                margin-top: 16px;
+              "
+            >
+              <a
+                href="#"
+                style="
+                  width: 34px;
+                  height: 34px;
+                  border-radius: 8px;
+                  background: rgba(15, 23, 42, 0.6);
+                  border: 1px solid rgba(192, 57, 43, 0.3);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  text-decoration: none;
+                  transition: all 0.2s;
+                "
+                onmouseover="
+                  this.style.background = '#DC2626';
+                  this.style.borderColor = '#DC2626';
+                "
+                onmouseout="
+                  this.style.background = 'rgba(15,23,42,.6)';
+                  this.style.borderColor = 'rgba(192,57,43,.3)';
+                "
+                >𝕏</a
+              ><a
+                href="#"
+                style="
+                  width: 34px;
+                  height: 34px;
+                  border-radius: 8px;
+                  background: rgba(15, 23, 42, 0.6);
+                  border: 1px solid rgba(192, 57, 43, 0.3);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  text-decoration: none;
+                  transition: all 0.2s;
+                "
+                onmouseover="
+                  this.style.background = '#DC2626';
+                  this.style.borderColor = '#DC2626';
+                "
+                onmouseout="
+                  this.style.background = 'rgba(15,23,42,.6)';
+                  this.style.borderColor = 'rgba(192,57,43,.3)';
+                "
+                >in</a
+              ><a
+                href="#"
+                style="
+                  width: 34px;
+                  height: 34px;
+                  border-radius: 8px;
+                  background: rgba(15, 23, 42, 0.6);
+                  border: 1px solid rgba(192, 57, 43, 0.3);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  text-decoration: none;
+                  transition: all 0.2s;
+                "
+                onmouseover="
+                  this.style.background = '#DC2626';
+                  this.style.borderColor = '#DC2626';
+                "
+                onmouseout="
+                  this.style.background = 'rgba(15,23,42,.6)';
+                  this.style.borderColor = 'rgba(192,57,43,.3)';
+                "
+                >📧</a
+              >
+            </div>
+          </div>
+          <div
+            class="rv d3"
+            style="
+              background: linear-gradient(
+                160deg,
+                rgba(60, 8, 8, 0.5),
+                rgba(15, 23, 42, 0.65)
+              );
+              backdrop-filter: blur(15px);
+              border: 1px solid rgba(192, 57, 43, 0.3);
+              border-radius: 20px;
+              padding: 32px 24px;
+              text-align: center;
+              transition: all 0.35s;
+            "
+            onmouseover="
+              this.style.borderColor = 'rgba(229,57,53,.55)';
+              this.style.transform = 'translateY(-5px)';
+            "
+            onmouseout="
+              this.style.borderColor = 'rgba(192,57,43,.3)';
+              this.style.transform = '';
+            "
+          >
+            <div
+              style="
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #dc2626, #b91c1c);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 36px;
+                margin: 0 auto 20px;
+                box-shadow: 0 8px 24px #dc262635;
+              "
+            >
+              🎨
+            </div>
+            <div
+              style="
+                font-family: &quot;Sora&quot;, sans-serif;
+                font-size: 18px;
+                font-weight: 700;
+                color: var(--txt);
+                margin-bottom: 6px;
+              "
+            >
+              Can Demir
+            </div>
+            <div
+              style="
+                font-size: 13px;
+                color: #dc2626;
+                font-weight: 600;
+                font-family: &quot;Inconsolata&quot;, monospace;
+              "
+            >
+              Baş Tasarımcı
+            </div>
+            <div
+              style="
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+                margin-top: 16px;
+              "
+            >
+              <a
+                href="#"
+                style="
+                  width: 34px;
+                  height: 34px;
+                  border-radius: 8px;
+                  background: rgba(15, 23, 42, 0.6);
+                  border: 1px solid rgba(192, 57, 43, 0.3);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  text-decoration: none;
+                  transition: all 0.2s;
+                "
+                onmouseover="
+                  this.style.background = '#DC2626';
+                  this.style.borderColor = '#DC2626';
+                "
+                onmouseout="
+                  this.style.background = 'rgba(15,23,42,.6)';
+                  this.style.borderColor = 'rgba(192,57,43,.3)';
+                "
+                >𝕏</a
+              ><a
+                href="#"
+                style="
+                  width: 34px;
+                  height: 34px;
+                  border-radius: 8px;
+                  background: rgba(15, 23, 42, 0.6);
+                  border: 1px solid rgba(192, 57, 43, 0.3);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  text-decoration: none;
+                  transition: all 0.2s;
+                "
+                onmouseover="
+                  this.style.background = '#DC2626';
+                  this.style.borderColor = '#DC2626';
+                "
+                onmouseout="
+                  this.style.background = 'rgba(15,23,42,.6)';
+                  this.style.borderColor = 'rgba(192,57,43,.3)';
+                "
+                >in</a
+              ><a
+                href="#"
+                style="
+                  width: 34px;
+                  height: 34px;
+                  border-radius: 8px;
+                  background: rgba(15, 23, 42, 0.6);
+                  border: 1px solid rgba(192, 57, 43, 0.3);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  text-decoration: none;
+                  transition: all 0.2s;
+                "
+                onmouseover="
+                  this.style.background = '#DC2626';
+                  this.style.borderColor = '#DC2626';
+                "
+                onmouseout="
+                  this.style.background = 'rgba(15,23,42,.6)';
+                  this.style.borderColor = 'rgba(192,57,43,.3)';
+                "
+                >📧</a
+              >
+            </div>
+          </div>
+          <div
+            class="rv d4"
+            style="
+              background: linear-gradient(
+                160deg,
+                rgba(60, 8, 8, 0.5),
+                rgba(15, 23, 42, 0.65)
+              );
+              backdrop-filter: blur(15px);
+              border: 1px solid rgba(192, 57, 43, 0.3);
+              border-radius: 20px;
+              padding: 32px 24px;
+              text-align: center;
+              transition: all 0.35s;
+            "
+            onmouseover="
+              this.style.borderColor = 'rgba(229,57,53,.55)';
+              this.style.transform = 'translateY(-5px)';
+            "
+            onmouseout="
+              this.style.borderColor = 'rgba(192,57,43,.3)';
+              this.style.transform = '';
+            "
+          >
+            <div
+              style="
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #dc2626, #b91c1c);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 36px;
+                margin: 0 auto 20px;
+                box-shadow: 0 8px 24px #dc262635;
+              "
+            >
+              📊
+            </div>
+            <div
+              style="
+                font-family: &quot;Sora&quot;, sans-serif;
+                font-size: 18px;
+                font-weight: 700;
+                color: var(--txt);
+                margin-bottom: 6px;
+              "
+            >
+              Selin Arslan
+            </div>
+            <div
+              style="
+                font-size: 13px;
+                color: #dc2626;
+                font-weight: 600;
+                font-family: &quot;Inconsolata&quot;, monospace;
+              "
+            >
+              Pazarlama Müdürü
+            </div>
+            <div
+              style="
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+                margin-top: 16px;
+              "
+            >
+              <a
+                href="#"
+                style="
+                  width: 34px;
+                  height: 34px;
+                  border-radius: 8px;
+                  background: rgba(15, 23, 42, 0.6);
+                  border: 1px solid rgba(192, 57, 43, 0.3);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  text-decoration: none;
+                  transition: all 0.2s;
+                "
+                onmouseover="
+                  this.style.background = '#DC2626';
+                  this.style.borderColor = '#DC2626';
+                "
+                onmouseout="
+                  this.style.background = 'rgba(15,23,42,.6)';
+                  this.style.borderColor = 'rgba(192,57,43,.3)';
+                "
+                >𝕏</a
+              ><a
+                href="#"
+                style="
+                  width: 34px;
+                  height: 34px;
+                  border-radius: 8px;
+                  background: rgba(15, 23, 42, 0.6);
+                  border: 1px solid rgba(192, 57, 43, 0.3);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  text-decoration: none;
+                  transition: all 0.2s;
+                "
+                onmouseover="
+                  this.style.background = '#DC2626';
+                  this.style.borderColor = '#DC2626';
+                "
+                onmouseout="
+                  this.style.background = 'rgba(15,23,42,.6)';
+                  this.style.borderColor = 'rgba(192,57,43,.3)';
+                "
+                >in</a
+              ><a
+                href="#"
+                style="
+                  width: 34px;
+                  height: 34px;
+                  border-radius: 8px;
+                  background: rgba(15, 23, 42, 0.6);
+                  border: 1px solid rgba(192, 57, 43, 0.3);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  text-decoration: none;
+                  transition: all 0.2s;
+                "
+                onmouseover="
+                  this.style.background = '#DC2626';
+                  this.style.borderColor = '#DC2626';
+                "
+                onmouseout="
+                  this.style.background = 'rgba(15,23,42,.6)';
+                  this.style.borderColor = 'rgba(192,57,43,.3)';
+                "
+                >📧</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      style="
+        position: relative;
+        z-index: 1;
+        padding: 96px 48px;
+        background: transparent;
+      "
+    >
+      <div class="wrap">
+        <div style="text-align: center; margin-bottom: 52px">
+          <div class="pill rv">MÜŞTERİ GÖRÜŞLERİ</div>
+          <h2
+            class="rv d1"
+            style="
+              font-family: &quot;Sora&quot;, sans-serif;
+              font-size: clamp(32px, 5vw, 56px);
+              font-weight: 800;
+              color: var(--txt);
+            "
+          >
+            BIZI
+            <span
+              style="
+                background: linear-gradient(135deg, #dc2626, #b91c1c);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+              "
+              >NEDEN SEVİYORLAR</span
+            >
+          </h2>
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+          "
+        >
+          <div
+            class="rv d1"
+            style="
+              background: linear-gradient(
+                160deg,
+                rgba(60, 8, 8, 0.5),
+                rgba(15, 23, 42, 0.65)
+              );
+              backdrop-filter: blur(15px);
+              border: 1px solid rgba(192, 57, 43, 0.3);
+              border-radius: 20px;
+              padding: 28px;
+              transition: all 0.35s;
+              position: relative;
+              overflow: hidden;
+            "
+            onmouseover="
+              this.style.borderColor = 'rgba(229,57,53,.55)';
+              this.style.transform = 'translateY(-4px)';
+            "
+            onmouseout="
+              this.style.borderColor = 'rgba(192,57,43,.3)';
+              this.style.transform = '';
+            "
+          >
+            <div
+              style="
+                font-size: 48px;
+                color: #dc2626;
+                margin-bottom: 14px;
+                font-family: Georgia, serif;
+                line-height: 0.8;
+              "
+            >
+              "
+            </div>
+            <p
+              style="
+                font-size: 15px;
+                color: var(--muted);
+                line-height: 1.8;
+                margin-bottom: 20px;
+                font-style: italic;
+              "
+            >
+              Interium ile oluşturulan sitemiz beklentilerimizin çok ötesine
+              geçti. Profesyonellik dorukta, kesinlikle tavsiye ederim.
+            </p>
+            <div style="display: flex; gap: 3px; margin-bottom: 16px">
+              <span style="color: #f59e0b; font-size: 16px">★</span
+              ><span style="color: #f59e0b; font-size: 16px">★</span
+              ><span style="color: #f59e0b; font-size: 16px">★</span
+              ><span style="color: #f59e0b; font-size: 16px">★</span
+              ><span style="color: #f59e0b; font-size: 16px">★</span>
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                border-top: 1px solid rgba(192, 57, 43, 0.25);
+                padding-top: 16px;
+              "
+            >
+              <div
+                style="
+                  width: 46px;
+                  height: 46px;
+                  border-radius: 50%;
+                  background: linear-gradient(135deg, #dc2626, #b91c1c);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: 800;
+                  color: #fff;
+                  font-size: 19px;
+                  flex-shrink: 0;
+                "
+              >
+                A
+              </div>
+              <div>
+                <div
+                  style="font-weight: 700; color: var(--txt); font-size: 15px"
+                >
+                  Ayşe K.
+                </div>
+                <div style="font-size: 13px; color: var(--muted)">
+                  CEO, TechCorp
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="rv d2"
+            style="
+              background: linear-gradient(
+                160deg,
+                rgba(60, 8, 8, 0.5),
+                rgba(15, 23, 42, 0.65)
+              );
+              backdrop-filter: blur(15px);
+              border: 1px solid rgba(192, 57, 43, 0.3);
+              border-radius: 20px;
+              padding: 28px;
+              transition: all 0.35s;
+              position: relative;
+              overflow: hidden;
+            "
+            onmouseover="
+              this.style.borderColor = 'rgba(229,57,53,.55)';
+              this.style.transform = 'translateY(-4px)';
+            "
+            onmouseout="
+              this.style.borderColor = 'rgba(192,57,43,.3)';
+              this.style.transform = '';
+            "
+          >
+            <div
+              style="
+                font-size: 48px;
+                color: #dc2626;
+                margin-bottom: 14px;
+                font-family: Georgia, serif;
+                line-height: 0.8;
+              "
+            >
+              "
+            </div>
+            <p
+              style="
+                font-size: 15px;
+                color: var(--muted);
+                line-height: 1.8;
+                margin-bottom: 20px;
+                font-style: italic;
+              "
+            >
+              Gerçek anlamda değer yaratan bir ekip. Süreç boyunca şeffaf ve
+              çözüm odaklı çalıştılar, sonuçtan son derece memnunum.
+            </p>
+            <div style="display: flex; gap: 3px; margin-bottom: 16px">
+              <span style="color: #f59e0b; font-size: 16px">★</span
+              ><span style="color: #f59e0b; font-size: 16px">★</span
+              ><span style="color: #f59e0b; font-size: 16px">★</span
+              ><span style="color: #f59e0b; font-size: 16px">★</span
+              ><span style="color: #f59e0b; font-size: 16px">★</span>
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                border-top: 1px solid rgba(192, 57, 43, 0.25);
+                padding-top: 16px;
+              "
+            >
+              <div
+                style="
+                  width: 46px;
+                  height: 46px;
+                  border-radius: 50%;
+                  background: linear-gradient(135deg, #dc2626, #b91c1c);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: 800;
+                  color: #fff;
+                  font-size: 19px;
+                  flex-shrink: 0;
+                "
+              >
+                M
+              </div>
+              <div>
+                <div
+                  style="font-weight: 700; color: var(--txt); font-size: 15px"
+                >
+                  Mehmet T.
+                </div>
+                <div style="font-size: 13px; color: var(--muted)">
+                  Genel Müdür, Nova A.Ş.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="rv d3"
+            style="
+              background: linear-gradient(
+                160deg,
+                rgba(60, 8, 8, 0.5),
+                rgba(15, 23, 42, 0.65)
+              );
+              backdrop-filter: blur(15px);
+              border: 1px solid rgba(192, 57, 43, 0.3);
+              border-radius: 20px;
+              padding: 28px;
+              transition: all 0.35s;
+              position: relative;
+              overflow: hidden;
+            "
+            onmouseover="
+              this.style.borderColor = 'rgba(229,57,53,.55)';
+              this.style.transform = 'translateY(-4px)';
+            "
+            onmouseout="
+              this.style.borderColor = 'rgba(192,57,43,.3)';
+              this.style.transform = '';
+            "
+          >
+            <div
+              style="
+                font-size: 48px;
+                color: #dc2626;
+                margin-bottom: 14px;
+                font-family: Georgia, serif;
+                line-height: 0.8;
+              "
+            >
+              "
+            </div>
+            <p
+              style="
+                font-size: 15px;
+                color: var(--muted);
+                line-height: 1.8;
+                margin-bottom: 20px;
+                font-style: italic;
+              "
+            >
+              Muhteşem bir deneyimdi. Fikirlerimizi hayata geçirme biçimleri
+              gerçekten etkileyiciydi. Bir daha tercih ederim.
+            </p>
+            <div style="display: flex; gap: 3px; margin-bottom: 16px">
+              <span style="color: #f59e0b; font-size: 16px">★</span
+              ><span style="color: #f59e0b; font-size: 16px">★</span
+              ><span style="color: #f59e0b; font-size: 16px">★</span
+              ><span style="color: #f59e0b; font-size: 16px">★</span
+              ><span style="color: #f59e0b; font-size: 16px">★</span>
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                border-top: 1px solid rgba(192, 57, 43, 0.25);
+                padding-top: 16px;
+              "
+            >
+              <div
+                style="
+                  width: 46px;
+                  height: 46px;
+                  border-radius: 50%;
+                  background: linear-gradient(135deg, #dc2626, #b91c1c);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: 800;
+                  color: #fff;
+                  font-size: 19px;
+                  flex-shrink: 0;
+                "
+              >
+                Z
+              </div>
+              <div>
+                <div
+                  style="font-weight: 700; color: var(--txt); font-size: 15px"
+                >
+                  Zeynep A.
+                </div>
+                <div style="font-size: 13px; color: var(--muted)">
+                  Kurucu, StartupXY
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="rv d1"
+            style="
+              background: linear-gradient(
+                160deg,
+                rgba(60, 8, 8, 0.5),
+                rgba(15, 23, 42, 0.65)
+              );
+              backdrop-filter: blur(15px);
+              border: 1px solid rgba(192, 57, 43, 0.3);
+              border-radius: 20px;
+              padding: 28px;
+              transition: all 0.35s;
+              position: relative;
+              overflow: hidden;
+            "
+            onmouseover="
+              this.style.borderColor = 'rgba(229,57,53,.55)';
+              this.style.transform = 'translateY(-4px)';
+            "
+            onmouseout="
+              this.style.borderColor = 'rgba(192,57,43,.3)';
+              this.style.transform = '';
+            "
+          >
+            <div
+              style="
+                font-size: 48px;
+                color: #dc2626;
+                margin-bottom: 14px;
+                font-family: Georgia, serif;
+                line-height: 0.8;
+              "
+            >
+              "
+            </div>
+            <p
+              style="
+                font-size: 15px;
+                color: var(--muted);
+                line-height: 1.8;
+                margin-bottom: 20px;
+                font-style: italic;
+              "
+            >
+              Hız ve kaliteyi bir arada sunuyorlar. Projemiz tam zamanında
+              teslim edildi ve sonuç mükemmeldi.
+            </p>
+            <div style="display: flex; gap: 3px; margin-bottom: 16px">
+              <span style="color: #f59e0b; font-size: 16px">★</span
+              ><span style="color: #f59e0b; font-size: 16px">★</span
+              ><span style="color: #f59e0b; font-size: 16px">★</span
+              ><span style="color: #f59e0b; font-size: 16px">★</span
+              ><span style="color: #f59e0b; font-size: 16px">★</span>
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                border-top: 1px solid rgba(192, 57, 43, 0.25);
+                padding-top: 16px;
+              "
+            >
+              <div
+                style="
+                  width: 46px;
+                  height: 46px;
+                  border-radius: 50%;
+                  background: linear-gradient(135deg, #dc2626, #b91c1c);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: 800;
+                  color: #fff;
+                  font-size: 19px;
+                  flex-shrink: 0;
+                "
+              >
+                B
+              </div>
+              <div>
+                <div
+                  style="font-weight: 700; color: var(--txt); font-size: 15px"
+                >
+                  Burak D.
+                </div>
+                <div style="font-size: 13px; color: var(--muted)">
+                  Pazarlama Direktörü
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      style="
+        position: relative;
+        z-index: 1;
+        padding: 96px 48px;
+        background: rgba(15, 23, 42, 0.45);
+        backdrop-filter: blur(10px);
+      "
+    >
+      <div class="wrap">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 52px;
+          "
+        >
+          <div>
+            <div class="pill rv">ÜRÜNLERİMİZ</div>
+            <h2
+              class="rv d1"
+              style="
+                font-family: &quot;Sora&quot;, sans-serif;
+                font-size: clamp(32px, 5vw, 54px);
+                font-weight: 800;
+                color: var(--txt);
+              "
+            >
+              ÖZEL
+              <span
+                style="
+                  background: linear-gradient(135deg, #dc2626, #b91c1c);
+                  -webkit-background-clip: text;
+                  background-clip: text;
+                  color: transparent;
+                "
+                >ÜRÜNLER</span
+              >
+            </h2>
+          </div>
+          <a
+            href="#"
+            style="
+              display: inline-flex;
+              align-items: center;
+              gap: 7px;
+              padding: 10px 20px;
+              border-radius: 10px;
+              background: transparent;
+              color: #dc2626;
+              font-weight: 700;
+              font-size: 14px;
+              text-decoration: none;
+              border: 1px solid rgba(192, 57, 43, 0.4);
+              transition: all 0.2s;
+            "
+            onmouseover="this.style.background = 'rgba(192,57,43,.12)'"
+            onmouseout="this.style.background = 'transparent'"
+            >Tüm Ürünler →</a
+          >
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 20px;
+          "
+        >
+          <div
+            class="rv d1"
+            style="
+              background: linear-gradient(
+                160deg,
+                rgba(60, 8, 8, 0.5),
+                rgba(15, 23, 42, 0.65)
+              );
+              backdrop-filter: blur(15px);
+              border: 1px solid rgba(192, 57, 43, 0.3);
+              border-radius: 20px;
+              overflow: hidden;
+              transition: all 0.35s;
+              cursor: pointer;
+            "
+            onmouseover="
+              this.style.borderColor = 'rgba(229,57,53,.55)';
+              this.style.transform = 'translateY(-5px)';
+              this.style.boxShadow = '0 20px 50px rgba(0,0,0,.5)';
+            "
+            onmouseout="
+              this.style.borderColor = 'rgba(192,57,43,.3)';
+              this.style.transform = '';
+              this.style.boxShadow = '';
+            "
+          >
+            <div
+              style="
+                height: 160px;
+                background: linear-gradient(
+                  135deg,
+                  rgba(192, 57, 43, 0.2),
+                  rgba(139, 0, 0, 0.15)
+                );
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+              "
+            >
+              <span style="font-size: 48px">📦</span>
+              <div
+                style="
+                  position: absolute;
+                  top: 12px;
+                  right: 12px;
+                  padding: 4px 12px;
+                  background: #10b981;
+                  color: #000;
+                  border-radius: 99px;
+                  font-size: 11px;
+                  font-weight: 800;
+                  font-family: &quot;Inconsolata&quot;, monospace;
+                "
+              >
+                En Popüler
+              </div>
+            </div>
+            <div style="padding: 20px">
+              <h3
+                style="
+                  font-family: &quot;Sora&quot;, sans-serif;
+                  font-size: 18px;
+                  font-weight: 700;
+                  color: var(--txt);
+                  margin-bottom: 6px;
+                "
+              >
+                Ürün Alpha
+              </h3>
+              <p
+                style="
+                  font-size: 13px;
+                  color: var(--muted);
+                  margin-bottom: 14px;
+                "
+              >
+                Temel özellikler paketi
+              </p>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                "
+              >
+                <span
+                  style="
+                    font-family: &quot;Sora&quot;, sans-serif;
+                    font-size: 24px;
+                    font-weight: 800;
+                    color: #dc2626;
+                  "
+                  >₺299</span
+                >
+                <a
+                  href="#contact"
+                  style="
+                    padding: 8px 16px;
+                    background: #dc2626;
+                    color: #fff;
+                    border-radius: 10px;
+                    font-size: 13px;
+                    font-weight: 700;
+                    text-decoration: none;
+                    transition: all 0.2s;
+                  "
+                  onmouseover="this.style.opacity = '.85'"
+                  onmouseout="this.style.opacity = '1'"
+                  >Satın Al</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="rv d2"
+            style="
+              background: linear-gradient(
+                160deg,
+                rgba(60, 8, 8, 0.5),
+                rgba(15, 23, 42, 0.65)
+              );
+              backdrop-filter: blur(15px);
+              border: 1px solid rgba(192, 57, 43, 0.3);
+              border-radius: 20px;
+              overflow: hidden;
+              transition: all 0.35s;
+              cursor: pointer;
+            "
+            onmouseover="
+              this.style.borderColor = 'rgba(229,57,53,.55)';
+              this.style.transform = 'translateY(-5px)';
+              this.style.boxShadow = '0 20px 50px rgba(0,0,0,.5)';
+            "
+            onmouseout="
+              this.style.borderColor = 'rgba(192,57,43,.3)';
+              this.style.transform = '';
+              this.style.boxShadow = '';
+            "
+          >
+            <div
+              style="
+                height: 160px;
+                background: linear-gradient(
+                  135deg,
+                  rgba(192, 57, 43, 0.2),
+                  rgba(139, 0, 0, 0.15)
+                );
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+              "
+            >
+              <span style="font-size: 48px">⭐</span>
+              <div
+                style="
+                  position: absolute;
+                  top: 12px;
+                  right: 12px;
+                  padding: 4px 12px;
+                  background: #10b981;
+                  color: #000;
+                  border-radius: 99px;
+                  font-size: 11px;
+                  font-weight: 800;
+                  font-family: &quot;Inconsolata&quot;, monospace;
+                "
+              >
+                Yeni
+              </div>
+            </div>
+            <div style="padding: 20px">
+              <h3
+                style="
+                  font-family: &quot;Sora&quot;, sans-serif;
+                  font-size: 18px;
+                  font-weight: 700;
+                  color: var(--txt);
+                  margin-bottom: 6px;
+                "
+              >
+                Ürün Beta
+              </h3>
+              <p
+                style="
+                  font-size: 13px;
+                  color: var(--muted);
+                  margin-bottom: 14px;
+                "
+              >
+                Gelişmiş özellikler
+              </p>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                "
+              >
+                <span
+                  style="
+                    font-family: &quot;Sora&quot;, sans-serif;
+                    font-size: 24px;
+                    font-weight: 800;
+                    color: #dc2626;
+                  "
+                  >₺599</span
+                >
+                <a
+                  href="#contact"
+                  style="
+                    padding: 8px 16px;
+                    background: #dc2626;
+                    color: #fff;
+                    border-radius: 10px;
+                    font-size: 13px;
+                    font-weight: 700;
+                    text-decoration: none;
+                    transition: all 0.2s;
+                  "
+                  onmouseover="this.style.opacity = '.85'"
+                  onmouseout="this.style.opacity = '1'"
+                  >Satın Al</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="rv d3"
+            style="
+              background: linear-gradient(
+                160deg,
+                rgba(60, 8, 8, 0.5),
+                rgba(15, 23, 42, 0.65)
+              );
+              backdrop-filter: blur(15px);
+              border: 1px solid rgba(192, 57, 43, 0.3);
+              border-radius: 20px;
+              overflow: hidden;
+              transition: all 0.35s;
+              cursor: pointer;
+            "
+            onmouseover="
+              this.style.borderColor = 'rgba(229,57,53,.55)';
+              this.style.transform = 'translateY(-5px)';
+              this.style.boxShadow = '0 20px 50px rgba(0,0,0,.5)';
+            "
+            onmouseout="
+              this.style.borderColor = 'rgba(192,57,43,.3)';
+              this.style.transform = '';
+              this.style.boxShadow = '';
+            "
+          >
+            <div
+              style="
+                height: 160px;
+                background: linear-gradient(
+                  135deg,
+                  rgba(192, 57, 43, 0.2),
+                  rgba(139, 0, 0, 0.15)
+                );
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+              "
+            >
+              <span style="font-size: 48px">🏆</span>
+              <div
+                style="
+                  position: absolute;
+                  top: 12px;
+                  right: 12px;
+                  padding: 4px 12px;
+                  background: #8b5cf6;
+                  color: #fff;
+                  border-radius: 99px;
+                  font-size: 11px;
+                  font-weight: 800;
+                  font-family: &quot;Inconsolata&quot;, monospace;
+                "
+              >
+                Premium
+              </div>
+            </div>
+            <div style="padding: 20px">
+              <h3
+                style="
+                  font-family: &quot;Sora&quot;, sans-serif;
+                  font-size: 18px;
+                  font-weight: 700;
+                  color: var(--txt);
+                  margin-bottom: 6px;
+                "
+              >
+                Ürün Gama
+              </h3>
+              <p
+                style="
+                  font-size: 13px;
+                  color: var(--muted);
+                  margin-bottom: 14px;
+                "
+              >
+                Tüm özellikler + Destek
+              </p>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                "
+              >
+                <span
+                  style="
+                    font-family: &quot;Sora&quot;, sans-serif;
+                    font-size: 24px;
+                    font-weight: 800;
+                    color: #dc2626;
+                  "
+                  >₺999</span
+                >
+                <a
+                  href="#contact"
+                  style="
+                    padding: 8px 16px;
+                    background: #dc2626;
+                    color: #fff;
+                    border-radius: 10px;
+                    font-size: 13px;
+                    font-weight: 700;
+                    text-decoration: none;
+                    transition: all 0.2s;
+                  "
+                  onmouseover="this.style.opacity = '.85'"
+                  onmouseout="this.style.opacity = '1'"
+                  >Satın Al</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="contact"
+      style="
+        position: relative;
+        z-index: 1;
+        padding: 96px 48px;
+        background: transparent;
+      "
+    >
+      <div class="wrap">
+        <div style="max-width: 640px; margin: 0 auto; text-align: center">
+          <div class="pill rv">İLETİŞİM</div>
+          <h2
+            class="rv d1"
+            style="
+              font-family: &quot;Sora&quot;, sans-serif;
+              font-size: clamp(32px, 5vw, 56px);
+              font-weight: 800;
+              color: var(--txt);
+              margin-bottom: 20px;
+            "
+          >
+            BİZİMLE
+            <span
+              style="
+                background: linear-gradient(135deg, #dc2626, #b91c1c);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+              "
+              >BAĞLANTI KURUN</span
+            >
+          </h2>
+          <p
+            class="rv d2"
+            style="
+              font-size: 16px;
+              color: var(--muted);
+              line-height: 1.8;
+              margin-bottom: 40px;
+            "
+          >
+            Sorularınız için bize yazın. En kısa sürede yanıt vermek için
+            çalışacağız.
+          </p>
+
+          <form
+            class="rv d3"
+            style="display: flex; flex-direction: column; gap: 16px"
+          >
+            <input
+              type="text"
+              placeholder="Adınız"
+              style="
+                padding: 14px 18px;
+                border: 1px solid rgba(192, 57, 43, 0.3);
+                background: rgba(15, 23, 42, 0.6);
+                border-radius: 10px;
+                color: var(--txt);
+                font-family: &quot;Sora&quot;, sans-serif;
+                transition: all 0.2s;
+              "
+              onfocus="
+                this.style.borderColor = '#DC2626';
+                this.style.background = 'rgba(15,23,42,.8)';
+              "
+              onblur="
+                this.style.borderColor = 'rgba(192,57,43,.3)';
+                this.style.background = 'rgba(15,23,42,.6)';
+              "
+            />
+            <input
+              type="email"
+              placeholder="E-posta adresiniz"
+              style="
+                padding: 14px 18px;
+                border: 1px solid rgba(192, 57, 43, 0.3);
+                background: rgba(15, 23, 42, 0.6);
+                border-radius: 10px;
+                color: var(--txt);
+                font-family: &quot;Sora&quot;, sans-serif;
+                transition: all 0.2s;
+              "
+              onfocus="
+                this.style.borderColor = '#DC2626';
+                this.style.background = 'rgba(15,23,42,.8)';
+              "
+              onblur="
+                this.style.borderColor = 'rgba(192,57,43,.3)';
+                this.style.background = 'rgba(15,23,42,.6)';
+              "
+            />
+            <textarea
+              placeholder="Mesajınız"
+              style="
+                padding: 14px 18px;
+                border: 1px solid rgba(192, 57, 43, 0.3);
+                background: rgba(15, 23, 42, 0.6);
+                border-radius: 10px;
+                color: var(--txt);
+                font-family: &quot;Sora&quot;, sans-serif;
+                min-height: 120px;
+                resize: vertical;
+                transition: all 0.2s;
+              "
+              onfocus="
+                this.style.borderColor = '#DC2626';
+                this.style.background = 'rgba(15,23,42,.8)';
+              "
+              onblur="
+                this.style.borderColor = 'rgba(192,57,43,.3)';
+                this.style.background = 'rgba(15,23,42,.6)';
+              "
+            ></textarea>
+            <button
+              type="submit"
+              style="
+                padding: 14px;
+                background: linear-gradient(135deg, #dc2626, #b91c1c);
+                color: #fff;
+                border: none;
+                border-radius: 10px;
+                font-weight: 700;
+                cursor: pointer;
+                font-family: &quot;Sora&quot;, sans-serif;
+                font-size: 16px;
+                transition: all 0.2s;
+                box-shadow: 0 10px 36px #dc262645;
+              "
+              onmouseover="
+                this.style.transform = 'translateY(-2px)';
+                this.style.boxShadow = '0 18px 50px #DC262660';
+              "
+              onmouseout="
+                this.style.transform = '';
+                this.style.boxShadow = '0 10px 36px #DC262645';
+              "
+            >
+              Gönder
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer
+      style="
+        position: relative;
+        z-index: 1;
+        padding: 48px;
+        background: rgba(15, 23, 42, 0.8);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(192, 57, 43, 0.28);
+        text-align: center;
+        color: var(--muted);
+        font-size: 14px;
+      "
+    >
+      <div class="wrap">
+        <div style="margin-bottom: 20px">
+          <p style="margin-bottom: 10px">
+            © 2025 <strong style="color: var(--txt)">Lay7nX</strong> — Hər
+            addımınız bizimlə
+          </p>
+          <div
+            style="
+              display: flex;
+              justify-content: center;
+              gap: 16px;
+              flex-wrap: wrap;
+              margin-top: 16px;
+            "
+          >
+            <a
+              href="#"
+              style="
+                color: var(--muted);
+                text-decoration: none;
+                transition: color 0.2s;
+              "
+              onmouseover="this.style.color = '#DC2626'"
+              onmouseout="this.style.color = 'var(--muted)'"
+              >Gizlilik</a
+            >
+            <span style="color: rgba(192, 57, 43, 0.5)">•</span>
+            <a
+              href="#"
+              style="
+                color: var(--muted);
+                text-decoration: none;
+                transition: color 0.2s;
+              "
+              onmouseover="this.style.color = '#DC2626'"
+              onmouseout="this.style.color = 'var(--muted)'"
+              >Şartlar</a
+            >
+            <span style="color: rgba(192, 57, 43, 0.5)">•</span>
+            <a
+              href="#"
+              style="
+                color: var(--muted);
+                text-decoration: none;
+                transition: color 0.2s;
+              "
+              onmouseover="this.style.color = '#DC2626'"
+              onmouseout="this.style.color = 'var(--muted)'"
+              >İletişim</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // ==================== INTERSECTION OBSERVER ====================
+      const observerOptions = { threshold: 0.1 };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("vis");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".rv").forEach((el) => observer.observe(el));
+
+      // ==================== DARK MODE TOGGLE ====================
+      function toggleDark() {
+        const html = document.documentElement;
+        const isDark = html.getAttribute("data-theme") === "dark";
+
+        if (isDark) {
+          html.removeAttribute("data-theme");
+          localStorage.setItem("theme", "light");
+          document.getElementById("dm-btn").textContent = "🌙";
+        } else {
+          html.setAttribute("data-theme", "dark");
+          localStorage.setItem("theme", "dark");
+          document.getElementById("dm-btn").textContent = "☀️";
+        }
+      }
+
+      // Theme'i localStorage'dan yükle
+      (function () {
+        const savedTheme = localStorage.getItem("theme");
+        const html = document.documentElement;
+
+        if (savedTheme === "dark") {
+          html.setAttribute("data-theme", "dark");
+          const dmBtn = document.getElementById("dm-btn");
+          if (dmBtn) dmBtn.textContent = "☀️";
+        }
+      })();
+
+      // ==================== MOBILE MENU TOGGLE ====================
+      let menuOpen = false;
+
+      function toggleNav() {
+        const nav = document.getElementById("nav-links");
+        const toggle = document.getElementById("nav-toggle");
+
+        if (!nav || !toggle) return;
+
+        menuOpen = !menuOpen;
+
+        if (menuOpen) {
+          nav.style.display = "flex";
+          nav.style.animation = "slideDown 0.3s ease forwards";
+
+          // Hamburger animasyonu
+          const spans = toggle.querySelectorAll("span");
+          if (spans.length >= 3) {
+            spans[0].style.transform = "rotate(45deg) translateY(12px)";
+            spans[1].style.opacity = "0";
+            spans[2].style.transform = "rotate(-45deg) translateY(-12px)";
+          }
+        } else {
+          // Close animation
+          const spans = toggle.querySelectorAll("span");
+          if (spans.length >= 3) {
+            spans[0].style.transform = "none";
+            spans[1].style.opacity = "1";
+            spans[2].style.transform = "none";
+          }
+
+          setTimeout(() => {
+            nav.style.display = "none";
+          }, 300);
+        }
+      }
+
+      // Menu dışında klik yapılırsa kapat
+      document.addEventListener("click", (e) => {
+        const nav = document.getElementById("nav-links");
+        const toggle = document.getElementById("nav-toggle");
+
+        if (
+          menuOpen &&
+          !nav?.contains(e.target) &&
+          !toggle?.contains(e.target)
+        ) {
+          toggleNav();
+        }
+      });
+
+      // ==================== SCROLL NAV EFFECT ====================
+      window.addEventListener("scroll", function () {
+        const nav = document.getElementById("main-nav");
+        if (!nav) return;
+
+        if (window.scrollY > 50) {
+          nav.style.background = "rgba(2,6,23,.95)";
+          nav.style.borderBottom = "1px solid rgba(192,57,43,.5)";
+        } else {
+          nav.style.background = "rgba(2,6,23,.85)";
+          nav.style.borderBottom = "1px solid rgba(192,57,43,.35)";
+        }
+      });
+
+      // ==================== DEVELOPER TOOLS BLOCKING ====================
+      // DevTools'u açık tutulan sürede kontrol et
+      let devToolsWarnShown = false;
+      const threshold = 160;
+
+      setInterval(() => {
+        if (window.outerHeight - window.innerHeight > threshold) {
+          if (!devToolsWarnShown) {
+            devToolsWarnShown = true;
+            console.clear();
+            console.log(
+              "%cDeveloper Tools açılmıştır!",
+              "color: orange; font-size: 16px; font-weight: bold;",
+            );
+          }
+        } else {
+          devToolsWarnShown = false;
+        }
+      }, 1000);
+
+      // F12 tuşunu blokla
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "F12" || e.keyCode === 123) {
+          e.preventDefault();
+          return false;
+        }
+        // Ctrl+Shift+I
+        if (e.ctrlKey && e.shiftKey && e.keyCode === 73) {
+          e.preventDefault();
+          return false;
+        }
+        // Ctrl+Shift+J
+        if (e.ctrlKey && e.shiftKey && e.keyCode === 74) {
+          e.preventDefault();
+          return false;
+        }
+        // Ctrl+Shift+C
+        if (e.ctrlKey && e.shiftKey && e.keyCode === 67) {
+          e.preventDefault();
+          return false;
+        }
+      });
+
+      // Right-click'i blokla
+      document.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+        return false;
+      });
+
+      // ==================== SMOOTH ANCHOR SCROLL ====================
+      document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener("click", function (e) {
+          const href = this.getAttribute("href");
+
+          if (href === "#" || href.length <= 1) {
+            return;
+          }
+
+          e.preventDefault();
+          const target = document.querySelector(href);
+
+          if (target) {
+            // Menu'yü kapat mobilde
+            if (menuOpen) {
+              toggleNav();
+            }
+
+            // Smooth scroll
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+
+      // ==================== PAGE LOAD ANIMATION ====================
+      window.addEventListener("load", () => {
+        document.body.style.opacity = "1";
+      });
+    </script>
+  </body>
+</html>

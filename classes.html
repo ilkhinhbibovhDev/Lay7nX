@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vehicle & Car OOP</title>
+    <script src="./js/classes.js" defer></script>
+
+    <link rel="stylesheet" href="./css/classes.css" />
+  </head>
+  <body>
+    <div class="grid-bg"></div>
+    <div class="container">
+      <header>
+        <div class="badge">JavaScript Car Choise</div>
+        <h1>Developer<span>&</span>Ilkin</h1>
+        <p class="subtitle">Düyməyə bas → nəticəni gör</p>
+      </header>
+
+      <div class="two-col">
+        <div class="panel v">
+          <div class="panel-head">
+            <div class="panel-label">Parent Class</div>
+            <div class="panel-title">Vehicle</div>
+          </div>
+          <div class="panel-body">
+            <div class="info-row">
+              <span class="info-key">brand</span>
+              <span class="info-val">"Toyota"</span>
+            </div>
+            <div class="info-row">
+              <span class="info-key">year</span>
+              <span class="info-val">2020</span>
+            </div>
+            <button class="btn btn-v" onclick="runVehicle()">
+              ▶ vehicle1.getInfo()
+            </button>
+          </div>
+        </div>
+
+        <div class="panel c">
+          <div class="panel-head">
+            <div class="panel-label">Child Class · extends Vehicle</div>
+            <div class="panel-title">Car</div>
+          </div>
+          <div class="panel-body">
+            <div class="info-row">
+              <span class="info-key">brand</span>
+              <span class="info-val">"BMW"</span>
+            </div>
+            <div class="info-row">
+              <span class="info-key">year</span>
+              <span class="info-val">2023</span>
+            </div>
+            <div class="info-row">
+              <span class="info-key">fuelType</span>
+              <span class="info-val">"Benzin"</span>
+            </div>
+            <button class="btn btn-c" onclick="runCar()">
+              ▶ car1.getInfo()
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="output-wrap">
+        <div class="out-title">// console.log() nəticəsi</div>
+        <div id="output">
+          <div class="out-empty">Hər hansı düyməyə bas...</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
